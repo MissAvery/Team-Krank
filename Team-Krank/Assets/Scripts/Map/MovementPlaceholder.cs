@@ -8,6 +8,7 @@ public class MovementPlaceholder : MonoBehaviour
     bool movementRestricted = false;
     public float stepDistance = 0.2f;
     public bool movementSwitched = false;
+    public bool falling = false;
 
     [SerializeField] private bool debugActivateMovement = true;
 
@@ -19,10 +20,14 @@ public class MovementPlaceholder : MonoBehaviour
 
     void movementStep() {
         Vector2 newPosition = transform.position;
-        if  (!movementSwitched) newPosition.x += stepDistance;
-        else newPosition.x -= stepDistance;
+        if (!falling) {
+            if (!movementSwitched) newPosition.x += stepDistance;
+            else newPosition.x -= stepDistance;
 
-        transform.position = newPosition;
+            transform.position = newPosition;
+        }
+        else { }
+
     }
 
 

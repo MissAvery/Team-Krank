@@ -8,7 +8,7 @@ public class UnitSpawn : MonoBehaviour
     BasicBalacing balancing;
     float localSpawntime;
 
-    int count = 0;
+    int count = 1;
 
 
 
