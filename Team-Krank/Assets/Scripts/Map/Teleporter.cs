@@ -17,12 +17,12 @@ public class Teleporter : MonoBehaviour
 
                 if (!enemy.movementSwitched) {
                 enemy.movementSwitched = true;
-                //enemy.mirrorSprite(true);
+                enemy.mirrorSprite(true);
             }
 
                 else {
                 enemy.movementSwitched = false;
-                //enemy.mirrorSprite(false);
+                enemy.mirrorSprite(false);
             }
 
 
