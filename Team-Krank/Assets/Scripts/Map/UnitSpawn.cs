@@ -35,6 +35,7 @@ public class UnitSpawn : MonoBehaviour {
     int rnd;
     IEnumerator SpawnInterval() {
         while (true) {
+            // OHNE RANDOM!
             if (!balancing.enableRandomAmount) {
                 if (count <= localMaxSpawnCount) {
                     SpawnUnit();
@@ -44,7 +45,6 @@ public class UnitSpawn : MonoBehaviour {
                 else if (balancing.enemiesAlive.Count <= 0 && count >= localMaxSpawnCount) {
                     count = 1;
                     balancing.waveCount = balancing.waveCount + 1;
-                    Debug.Log("Test");
                     yield return new WaitForSeconds(localCooldown);
                     balancing.buildEnabled = false;
 
@@ -54,7 +54,7 @@ public class UnitSpawn : MonoBehaviour {
                     yield return new WaitForSeconds(localSpawntime);
                 }
             }
-
+            // MIT RANDOM!
             else if (balancing.enableRandomAmount) {
 
                 if (!runOnce) {
@@ -69,13 +69,13 @@ public class UnitSpawn : MonoBehaviour {
                 }
                 else if (balancing.enemiesAlive.Count <= 0 && count >= rnd) {
                     count = 1;
+                    balancing.waveCount = balancing.waveCount + 1;
                     yield return new WaitForSeconds(localCooldown);
                     balancing.buildEnabled = false;
                     runOnce = false;
                 }
                 else {
                     yield return new WaitForSeconds(localSpawntime);
-                    //Debug.Log("Waiting... " + enemiesAlive.Count);
                 }
             }
 
