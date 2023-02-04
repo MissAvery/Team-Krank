@@ -17,12 +17,12 @@ public class Teleporter : MonoBehaviour
 
                 if (!enemy.movementSwitched) {
                 other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = true;
-                enemy.mirrorSprite(false);
+                enemy.mirrorSprite(true);
             }
 
                 else {
                 other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = false;
-                enemy.mirrorSprite(true);
+                //enemy.mirrorSprite(false);
             }
 
 
