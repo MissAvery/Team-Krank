@@ -17,6 +17,7 @@ public class MovementPlaceholder : MonoBehaviour
 
     public void FixedUpdate() {
      movementStep();
+        Debug.Log(movementSwitched);
     }
 
     //Discard

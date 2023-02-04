@@ -44,8 +44,8 @@ public class UnitSpawn : MonoBehaviour {
                 }
                 else if (balancing.enemiesAlive.Count <= 0 && count >= localMaxSpawnCount) {
                     count = 1;
-                    balancing.waveCount = balancing.waveCount + 1;
                     yield return new WaitForSeconds(localCooldown);
+                    balancing.waveCount = balancing.waveCount + 1;
                     balancing.buildEnabled = false;
 
 
@@ -69,8 +69,8 @@ public class UnitSpawn : MonoBehaviour {
                 }
                 else if (balancing.enemiesAlive.Count <= 0 && count >= rnd) {
                     count = 1;
-                    balancing.waveCount = balancing.waveCount + 1;
                     yield return new WaitForSeconds(localCooldown);
+                    balancing.waveCount = balancing.waveCount + 1;
                     balancing.buildEnabled = false;
                     runOnce = false;
                 }
