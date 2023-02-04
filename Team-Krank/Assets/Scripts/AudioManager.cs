@@ -7,6 +7,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
    
+    public float volumeM, volumeS;
     public Sound[] sounds;
 
     void Awake()
@@ -32,7 +33,7 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void NewSoundVolume(float vol)
+    public void NewSoundVolume(System.Single vol)
      {
         foreach (Sound s in sounds)
         {
@@ -43,7 +44,7 @@ public class AudioManager : MonoBehaviour
         }
      }
 
-     public void NewMusicVolume(float vol)
+     public void NewMusicVolume(System.Single vol)
      {
         foreach (Sound s in sounds)
         {
