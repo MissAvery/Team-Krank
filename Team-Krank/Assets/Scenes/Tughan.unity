@@ -681,7 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696b1c35dca760146a57c4dfeb51e47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOver: 0
 --- !u!1 &808100842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0236c82574792a44dab13868fbdbaefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesAlive: []
+  timeRemaining: 0
 --- !u!1 &1682257711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81923cf0d1db1a64a91a9c73bcb81795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0.2
+  spawnTimeBetween: 0.3
   maxSpawnCount: 5
   enemyTypes:
   - {fileID: 3903247684008350008, guid: be9e847a59ec41444a7271660cccb20b, type: 3}
@@ -1449,15 +1450,17 @@ MonoBehaviour:
   - {fileID: 3903247684008350008, guid: f4e5c98d8b901c245bf784c0de6ce012, type: 3}
   - {fileID: 3903247684008350008, guid: b6ee033117c04b949bb314670260cb7e, type: 3}
   enemySpeed:
-  - 2
-  - 4
-  - 6
-  - 1.5
+  - 50
+  - 12
+  - 26
+  - 7
   fallSpeed: 1
   nextSpawnThisUnit: 0
   spawnCooldown: 5
   slowFactor: 0.5
   rootHealthPoints: 20
+  gameOver: 0
+  buildEnabled: 0
 --- !u!4 &2015437799
 Transform:
   m_ObjectHideFlags: 0
