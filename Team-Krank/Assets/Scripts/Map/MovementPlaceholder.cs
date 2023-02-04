@@ -5,10 +5,9 @@ using UnityEngine;
 public class MovementPlaceholder : MonoBehaviour
 {
 
-
-
     GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
+    Collider col;
     public bool thisIsUnit = true;
     float localEnemySpeed;
     public bool movementSwitched = false;
@@ -16,25 +15,22 @@ public class MovementPlaceholder : MonoBehaviour
     public bool slowed = false;
 
 
-    public void Update() {
-
+    public void FixedUpdate() {
      movementStep();
-
     }
-
 
     public void movementStep() {
         Vector2 newPosition = transform.position;
         if (!falling) {
             if (!movementSwitched) newPosition.x += localEnemySpeed;
             else newPosition.x -= localEnemySpeed;
+
             transform.position = newPosition;
         }
         else {
             newPosition.y -= balancing.fallSpeed/100;
             transform.position = newPosition;
         }
-
     }
 
     private void Awake() {

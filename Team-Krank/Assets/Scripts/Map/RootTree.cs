@@ -7,8 +7,6 @@ public class RootTree : MonoBehaviour
     GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
 
-    public bool GameOver = false;
-
     private void OnTriggerEnter(Collider other) {
         //if(other enemyType1)...
 
@@ -19,7 +17,8 @@ public class RootTree : MonoBehaviour
 
         if(balancing.rootHealthPoints <= 0) {
             // Animation, effekte, etc
-            GameOver = true;
+            balancing.gameOver = true;
+            balancing.buildEnabled = false;
 
             // Placeholder
             Debug.Log("GAME OVER");
