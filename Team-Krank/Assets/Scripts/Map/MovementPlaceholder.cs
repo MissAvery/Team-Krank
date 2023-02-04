@@ -10,7 +10,7 @@ public class MovementPlaceholder : MonoBehaviour
     GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
     public bool thisIsUnit = true;
-    public float localEnemySpeed;
+    float localEnemySpeed;
     public bool movementSwitched = false;
     public bool falling = false;
     public bool slowed = false;
@@ -35,11 +35,9 @@ public class MovementPlaceholder : MonoBehaviour
             transform.position = newPosition;
         }
 
-
-
     }
 
-    private void Start() {
+    private void Awake() {
         GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
         balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
         localEnemySpeed = balancing.enemySpeed[0]/100;

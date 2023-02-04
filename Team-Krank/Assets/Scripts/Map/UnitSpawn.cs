@@ -20,15 +20,13 @@ public class UnitSpawn : MonoBehaviour
         Quaternion spawnRotation = this.transform.rotation;
         Instantiate(balancing.enemyTypes[balancing.nextSpawnThisUnit], spawnPosition, spawnRotation);
 
-        Debug.Log(count);
+        //Debug.Log(count);
     }
 
 
 
-    private void Start() {
-
+    private void Awake() {
         StartUp();
-
         StartCoroutine(SpawnInterval());
     }
 

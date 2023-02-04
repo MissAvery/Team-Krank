@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2343024386529360780}
   - component: {fileID: 7860337502560742683}
   - component: {fileID: 1918998453564755750}
+  - component: {fileID: 6863465887820370267}
   - component: {fileID: -7168244085686040602}
   - component: {fileID: 4739890318817675665}
   - component: {fileID: 4216794003606108933}
@@ -100,6 +101,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631c426b700542e4990d54419a66f916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6863465887820370267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903247684008350008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72dd4f4e0ea0ff4aabe914fe32a3a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  walkSpeed: 0
 --- !u!114 &-7168244085686040602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisIsUnit: 1
-  localEnemySpeed: 0
   movementSwitched: 0
   falling: 0
   slowed: 0
