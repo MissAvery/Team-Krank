@@ -10,6 +10,8 @@ public class UnitSpawn : MonoBehaviour
     float localCooldown;
     int localMaxSpawnCount;
 
+
+  
     int count = 1;
 
 
@@ -18,9 +20,9 @@ public class UnitSpawn : MonoBehaviour
     void SpawnUnit() {
         Vector2 spawnPosition = this.transform.position;
         Quaternion spawnRotation = this.transform.rotation;
-        Instantiate(balancing.enemyTypes[balancing.nextSpawnThisUnit], spawnPosition, spawnRotation);
-
-        //Debug.Log(count);
+        GameObject currentEnemy = Instantiate(balancing.enemyTypes[balancing.nextSpawnedUnitType], spawnPosition, spawnRotation);
+        balancing.enemiesAlive.Add(currentEnemy);
+        currentEnemy = null;
     }
 
 
@@ -29,28 +31,98 @@ public class UnitSpawn : MonoBehaviour
         StartUp();
         StartCoroutine(SpawnInterval());
     }
-
+    bool runOnce = false;
+    int rnd;
     IEnumerator SpawnInterval() {
             while (true) {
-            
-            if (count <= localMaxSpawnCount) {
-                SpawnUnit();
-                count++;
-                yield return new WaitForSeconds(localSpawntime);
+
+            if (!balancing.enableRandomAmount){
+                if (count <= localMaxSpawnCount) {
+                    SpawnUnit();
+                    count++;
+                    yield return new WaitForSeconds(localSpawntime);
+                }
+                else if (balancing.enemiesAlive.Count <= 0 && count >= localMaxSpawnCount) {
+                    count = 1;
+                    yield return new WaitForSeconds(localCooldown);
+                    balancing.buildEnabled = false;
+                }
+                else {
+                    yield return new WaitForSeconds(localSpawntime);
+                }
             }
-            else {
-                count = 0;
-                yield return new WaitForSeconds(localCooldown);
+
+            else if (balancing.enableRandomAmount) {
+
+                if (!runOnce) {
+                    rnd = Random.Range(balancing.minSpawnCount, balancing.maxSpawnCount);
+                    runOnce = true;
+                }
+
+                if (count <= rnd) {
+                    SpawnUnit();
+                    count++;
+                    yield return new WaitForSeconds(localSpawntime);
+                }
+                else if (balancing.enemiesAlive.Count <= 0 && count >= rnd) {
+                    count = 1;
+                    yield return new WaitForSeconds(localCooldown);
+                    balancing.buildEnabled = false;
+                    runOnce = false;
+                }
+                else {
+                    yield return new WaitForSeconds(localSpawntime);
+                    //Debug.Log("Waiting... " + enemiesAlive.Count);
+                }
+            }
+
+        }
+    }
+
+
+    void checkIfWaveCleared() {
+        if (balancing.enemiesAlive.Count <= 0) {
+            balancing.buildEnabled = true;
+        }
+        //check Ob Gegner dod
+        else {
+            for (int i = 0; i < balancing.enemiesAlive.Count; i++) {
+                if(balancing.enemiesAlive[i] == null) balancing.enemiesAlive.Remove(balancing.enemiesAlive[i]);
             }
         }
     }
+
+    void Timer() {
+        if (balancing.buildEnabled) {
+           
+            balancing.remainingTimeTillNextWave -=Time.deltaTime;
+
+            //Debug.Log(timeRemaining);
+        }
+        else balancing.remainingTimeTillNextWave = balancing.roundCooldown;
+    }
+
+    private void Update() {
+        Timer();
+    }
+    private void FixedUpdate() {
+        checkIfWaveCleared();
+    }
+
+
+
+
+
+
+
 
     void StartUp() {
         GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
         balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
 
-        localSpawntime = balancing.spawnTime;
-        localCooldown = balancing.spawnCooldown;
+        localSpawntime = balancing.spawnInbetweenTime;
+        localCooldown = balancing.roundCooldown;
+        balancing.remainingTimeTillNextWave = balancing.roundCooldown;
         localMaxSpawnCount = balancing.maxSpawnCount;
     }
 

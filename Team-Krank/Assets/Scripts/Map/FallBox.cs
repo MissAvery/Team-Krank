@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FallBox : MonoBehaviour
 {
+    GameObject[] GlobalBasicBalancing;
+    BasicBalacing balancing;
 
     private void OnTriggerEnter(Collider other) {
-        MovementPlaceholder enemy = other.GetComponent<MovementPlaceholder>();
-        if (enemy.thisIsUnit) {
-            enemy.falling = true;
+        MovementPlaceholder movement = other.GetComponent<MovementPlaceholder>();
+        if (movement.thisIsUnit) {
+            movement.falling = true;
         }
+
     }
     private void OnTriggerExit(Collider other) {
         MovementPlaceholder movement = other.GetComponent<MovementPlaceholder>();
@@ -19,6 +22,20 @@ public class FallBox : MonoBehaviour
 
             if (movement.movementSwitched) { other.GetComponent<MovementPlaceholder>().movementSwitched = false; }
             else if (!movement.movementSwitched) { other.GetComponent<MovementPlaceholder>().movementSwitched = true; }
+
         }
+    }
+
+
+
+
+
+
+
+
+
+    private void Awake() {
+        GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
+        balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
     }
 }
