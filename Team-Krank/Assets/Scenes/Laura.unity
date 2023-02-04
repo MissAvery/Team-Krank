@@ -386,8 +386,9 @@ GameObject:
   - component: {fileID: 465501901}
   - component: {fileID: 465501902}
   - component: {fileID: 465501903}
+  - component: {fileID: 465501904}
   m_Layer: 0
-  m_Name: ChonkBug
+  m_Name: Maus
   m_TagString: Enemy
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -431,6 +432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 100
+  currentHealth: 0
+  dead: 0
   enemy: {fileID: 465501896}
 --- !u!212 &465501899
 SpriteRenderer:
@@ -550,7 +553,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   walkspeed: {fileID: 1309621087}
+  healthstat: {fileID: 0}
+  prctdmg: 0
   speed: 0
+  timer: 0
+  duration: 10
+--- !u!95 &465501904
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465501896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b323e70423a8ce94fb14e220b6ab2faa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &643300280
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 50
+  currentHealth: 0
+  dead: 0
   enemy: {fileID: 0}
 --- !u!114 &814560433
 MonoBehaviour:

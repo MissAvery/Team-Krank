@@ -5,8 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startHealth;
-    private float currentHealth;
-    private bool dead = false;
+    public float currentHealth;
+    public bool dead = false;
     public GameObject enemy;
 
     private void Awake(){
