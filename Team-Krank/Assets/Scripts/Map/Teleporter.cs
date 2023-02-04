@@ -17,4 +17,15 @@ public class Teleporter : MonoBehaviour
 
         }
     }
+    //private void OnTriggerExit(Collider other) {
+    //    MovementPlaceholder enemy = other.gameObject.GetComponent<MovementPlaceholder>();
+    //    if (enemy) {
+            
+    //        if (enemy.movementSwitched) { other.GetComponent<MovementPlaceholder>().movementSwitched = true; }
+    //        else if (!enemy.movementSwitched) { other.GetComponent<MovementPlaceholder>().movementSwitched = true; }
+
+    //        enemy.movementStep();
+
+    //    }
+    //}
 }

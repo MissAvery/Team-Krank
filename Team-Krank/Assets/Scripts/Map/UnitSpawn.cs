@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class UnitSpawn : MonoBehaviour
 {
-    [SerializeField] GameObject GlobalBasicBalancing;
+    GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
     float localSpawntime;
+    float localCooldown;
+    int localMaxSpawnCount;
 
     int count = 1;
 
 
 
-    private void Start() {
-
-        balancing = GlobalBasicBalancing.GetComponent<BasicBalacing>();
-        StartCoroutine(SpawnInterval());
-    }
 
     void SpawnUnit() {
         Vector2 spawnPosition = this.transform.position;
@@ -27,19 +24,36 @@ public class UnitSpawn : MonoBehaviour
     }
 
 
+
+    private void Start() {
+
+        StartUp();
+
+        StartCoroutine(SpawnInterval());
+    }
+
     IEnumerator SpawnInterval() {
             while (true) {
             
-            if (count <= balancing.maxSpawnCount) {
+            if (count <= localMaxSpawnCount) {
                 SpawnUnit();
                 count++;
-                yield return new WaitForSeconds(balancing.spawnTime);
+                yield return new WaitForSeconds(localSpawntime);
             }
             else {
                 count = 0;
-                yield return new WaitForSeconds(balancing.spawnCooldown);
+                yield return new WaitForSeconds(localCooldown);
             }
         }
+    }
+
+    void StartUp() {
+        GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
+        balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
+
+        localSpawntime = balancing.spawnTime;
+        localCooldown = balancing.spawnCooldown;
+        localMaxSpawnCount = balancing.maxSpawnCount;
     }
 
 }

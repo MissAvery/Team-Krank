@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class MovementPlaceholder : MonoBehaviour
 {
+
+
+
+    GameObject[] GlobalBasicBalancing;
+    BasicBalacing balancing;
     public bool thisIsUnit = true;
-    bool movementRestricted = false;
-    public float stepDistance = 0.2f;
+    public float localEnemySpeed;
     public bool movementSwitched = false;
     public bool falling = false;
+    public bool slowed = false;
 
-    [SerializeField] private bool debugActivateMovement = true;
 
     public void Update() {
 
-        if (debugActivateMovement) movementStep();
+     movementStep();
 
     }
 
-    void movementStep() {
+
+    public void movementStep() {
         Vector2 newPosition = transform.position;
         if (!falling) {
-            if (!movementSwitched) newPosition.x += stepDistance;
-            else newPosition.x -= stepDistance;
-
+            if (!movementSwitched) newPosition.x += localEnemySpeed;
+            else newPosition.x -= localEnemySpeed;
             transform.position = newPosition;
         }
-        else { }
+        else {
+            newPosition.y -= balancing.fallSpeed/100;
+            transform.position = newPosition;
+        }
+
+
 
     }
 
-
-
+    private void Start() {
+        GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
+        balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
+        localEnemySpeed = balancing.enemySpeed[0]/100;
+    }
 
 }
+

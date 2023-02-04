@@ -113,9 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisIsUnit: 1
-  stepDistance: 0.05
+  localEnemySpeed: 0
   movementSwitched: 0
-  debugActivateMovement: 1
+  falling: 0
+  slowed: 0
 --- !u!135 &4739890318817675665
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -143,5 +144,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
