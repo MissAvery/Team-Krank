@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pauseScreen;
+    public GameObject optionsScreen;
+    private bool pause;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start(){
+        pause = false;
     }
 
     public void SlowTime(){
-
+        Time.timeScale = 0.01f;
     }
     public void NormalTime(){
-
+        Time.timeScale = 1f;
     }
 
     public void OnPause(){
-        
+        if(!pause){
+            SlowTime();
+            pauseScreen.SetActive(true);
+            pause = true;
+        } else {
+            NormalTime();
+            optionsScreen.SetActive(false);
+            pauseScreen.SetActive(false);
+            pause = false;
+        }
     }
 }

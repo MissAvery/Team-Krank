@@ -21,7 +21,7 @@ public class TrapPoint : MonoBehaviour
     public Canvas button;
 
     private PointList list;
-    private bool locked;
+    public bool locked;
     void Start()
     {
         mode = "BetweenRounds";
