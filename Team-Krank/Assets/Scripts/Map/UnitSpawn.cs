@@ -37,12 +37,12 @@ public class UnitSpawn : MonoBehaviour {
         while (true) {
             // OHNE RANDOM!
             if (!balancing.enableRandomAmount) {
-                if (count <= localMaxSpawnCount) {
+                if (count <= /*localMaxSpawnCount*/ balancing.maxSpawnCount[balancing.waveCount]) {
                     SpawnUnit();
                     count++;
                     yield return new WaitForSeconds(localSpawntime);
                 }
-                else if (balancing.enemiesAlive.Count <= 0 && count >= localMaxSpawnCount) {
+                else if (balancing.enemiesAlive.Count <= 0 && count >= /*localMaxSpawnCount*/ balancing.maxSpawnCount[balancing.waveCount]) {
                     count = 1;
                     yield return new WaitForSeconds(localCooldown);
                     balancing.waveCount = balancing.waveCount + 1;
@@ -58,7 +58,7 @@ public class UnitSpawn : MonoBehaviour {
             else if (balancing.enableRandomAmount) {
 
                 if (!runOnce) {
-                    rnd = Random.Range(balancing.minSpawnCount, balancing.maxSpawnCount);
+                    rnd = Random.Range(balancing.minSpawnCount[balancing.waveCount], balancing.maxSpawnCount[balancing.waveCount]);
                     runOnce = true;
                 }
 
@@ -128,7 +128,7 @@ public class UnitSpawn : MonoBehaviour {
         localSpawntime = balancing.spawnInbetweenTime;
         localCooldown = balancing.roundCooldown;
         balancing.remainingTimeTillNextWave = balancing.roundCooldown;
-        localMaxSpawnCount = balancing.maxSpawnCount;
+        localMaxSpawnCount = balancing.maxSpawnCount[balancing.waveCount];
     }
 
 }

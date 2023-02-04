@@ -7,9 +7,11 @@ public class BasicBalacing : MonoBehaviour {
     public int rootHealthPoints = 20;
     public float spawnInbetweenTime = 1f;
     public float roundCooldown = 5f;
-    public int maxSpawnCount = 10;
+    //public int maxSpawnCount = 10;
+    public List <int> maxSpawnCount = new List<int>();
     public bool enableRandomAmount = false;
-    public int minSpawnCount = 1;
+    //public int minSpawnCount = 1;
+    public List<int> minSpawnCount = new List<int>();
     public List<GameObject> enemyTypes = new List<GameObject>();
     public List<float> enemySpeed = new List<float>();
     public List<int> enemyWaveType = new List<int>();
