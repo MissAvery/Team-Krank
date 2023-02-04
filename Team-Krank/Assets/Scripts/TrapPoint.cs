@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrapPoint : MonoBehaviour
 {
     private string mode;
-    private bool used;
+    private bool used, openUI;
     private GameObject trap;
 
     public GameObject StrongRoot;
@@ -19,17 +19,31 @@ public class TrapPoint : MonoBehaviour
 
     public Canvas trapUI;
     public Canvas button;
+
+    private PointList list;
+    private bool locked;
     void Start()
     {
+        mode = "BetweenRounds";
+        //Temporary
+
         used = false;
+        openUI = false;
         trapUI.enabled = false;
+        //locked = true;
+
+        list = GameObject.FindGameObjectWithTag("List").GetComponent<PointList>();
+        list.points.Add(this.gameObject);
     }
 
    public void Clicked(){
     if(mode == "BetweenRounds"){
-        if(!used){
+        if(!used && !openUI && !locked){
+            foreach (GameObject i in list.points){
+                i.GetComponent<TrapPoint>().CloseUI();
+            }
             trapUI.enabled = true;
-            used = true;
+            openUI = true;
             button.enabled = false;
         }
     }
@@ -65,10 +79,25 @@ public class TrapPoint : MonoBehaviour
             }
             trap.GetComponent<Trap>().SetTrapPoint(gameObject);
             trapUI.enabled = false;
+            used = true;
+            openUI = false;
     }
 
     public void SetUsedFalse(){
         used = false;
         button.enabled = true;
+        openUI = false;
+    }
+
+    public void CloseUI(){
+        trapUI.enabled = false;
+        openUI = false;
+        if (!used){
+            button.enabled = true;
+        }
+    }
+
+    public void Unlock(){
+        locked = false;
     }
 }

@@ -11,6 +11,8 @@ public class Trap : MonoBehaviour
     private GameObject trapPoint;
     void Start()
     {
+        mode = "InRound";     //temporary
+
         if(type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening"){
             col.enabled = false;
         }
