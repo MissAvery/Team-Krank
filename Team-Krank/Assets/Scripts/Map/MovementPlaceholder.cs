@@ -19,18 +19,36 @@ public class MovementPlaceholder : MonoBehaviour
      movementStep();
     }
 
+    //Discard
     public void movementStep() {
         Vector2 newPosition = transform.position;
+        Vector3 newTransfom = transform.localScale;
         if (!falling) {
-            if (!movementSwitched) newPosition.x += localEnemySpeed;
-            else newPosition.x -= localEnemySpeed;
-
+            if (!movementSwitched) {
+                newPosition.x += localEnemySpeed;
+            }
+            else {
+                newPosition.x -= localEnemySpeed;
+            } 
             transform.position = newPosition;
         }
         else {
             newPosition.y -= balancing.fallSpeed/100;
             transform.position = newPosition;
         }
+    }
+
+    //Übernehmen!
+    public void mirrorSprite(bool state) {
+        Vector3 newTransfom = transform.localScale;
+
+        if (state) {
+            newTransfom += new Vector3(2, 0, 0);
+        }
+        else if (!state) {
+            newTransfom -= new Vector3(-2, 0, 0);
+        }
+        transform.localScale = newTransfom;
     }
 
     private void Awake() {

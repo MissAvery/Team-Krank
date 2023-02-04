@@ -11,10 +11,21 @@ public class Teleporter : MonoBehaviour
 
             MovementPlaceholder enemy = other.gameObject.GetComponent<MovementPlaceholder>();
             if (enemy) {
-                other.transform.position = destinationTeleport.transform.position;
-            if (!enemy.movementSwitched) other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = true;
-            else other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = false;
 
-        }
+                other.transform.position = destinationTeleport.transform.position;
+ 
+
+                if (!enemy.movementSwitched) {
+                other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = true;
+                enemy.mirrorSprite(false);
+            }
+
+                else {
+                other.gameObject.GetComponent<MovementPlaceholder>().movementSwitched = false;
+                enemy.mirrorSprite(true);
+            }
+
+
+            }
     }
 }
