@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitSpawn : MonoBehaviour
-{
+public class UnitSpawn : MonoBehaviour {
     GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
     float localSpawntime;
@@ -11,7 +10,7 @@ public class UnitSpawn : MonoBehaviour
     int localMaxSpawnCount;
 
 
-  
+
     int count = 1;
 
 
@@ -20,7 +19,7 @@ public class UnitSpawn : MonoBehaviour
     void SpawnUnit() {
         Vector2 spawnPosition = this.transform.position;
         Quaternion spawnRotation = this.transform.rotation;
-        GameObject currentEnemy = Instantiate(balancing.enemyTypes[balancing.nextSpawnedUnitType], spawnPosition, spawnRotation);
+        GameObject currentEnemy = Instantiate(balancing.enemyTypes[balancing.enemyWaveType[balancing.waveCount]], spawnPosition, spawnRotation);
         balancing.enemiesAlive.Add(currentEnemy);
         currentEnemy = null;
     }
@@ -30,13 +29,13 @@ public class UnitSpawn : MonoBehaviour
     private void Awake() {
         StartUp();
         StartCoroutine(SpawnInterval());
+
     }
     bool runOnce = false;
     int rnd;
     IEnumerator SpawnInterval() {
-            while (true) {
-
-            if (!balancing.enableRandomAmount){
+        while (true) {
+            if (!balancing.enableRandomAmount) {
                 if (count <= localMaxSpawnCount) {
                     SpawnUnit();
                     count++;
@@ -44,8 +43,12 @@ public class UnitSpawn : MonoBehaviour
                 }
                 else if (balancing.enemiesAlive.Count <= 0 && count >= localMaxSpawnCount) {
                     count = 1;
+                    balancing.waveCount = balancing.waveCount + 1;
+                    Debug.Log("Test");
                     yield return new WaitForSeconds(localCooldown);
                     balancing.buildEnabled = false;
+
+
                 }
                 else {
                     yield return new WaitForSeconds(localSpawntime);
@@ -87,15 +90,15 @@ public class UnitSpawn : MonoBehaviour
         //check Ob Gegner dod
         else {
             for (int i = 0; i < balancing.enemiesAlive.Count; i++) {
-                if(balancing.enemiesAlive[i] == null) balancing.enemiesAlive.Remove(balancing.enemiesAlive[i]);
+                if (balancing.enemiesAlive[i] == null) balancing.enemiesAlive.Remove(balancing.enemiesAlive[i]);
             }
         }
     }
 
     void Timer() {
         if (balancing.buildEnabled) {
-           
-            balancing.remainingTimeTillNextWave -=Time.deltaTime;
+
+            balancing.remainingTimeTillNextWave -= Time.deltaTime;
 
             //Debug.Log(timeRemaining);
         }
@@ -108,6 +111,8 @@ public class UnitSpawn : MonoBehaviour
     private void FixedUpdate() {
         checkIfWaveCleared();
     }
+
+
 
 
 

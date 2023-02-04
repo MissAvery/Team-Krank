@@ -1081,7 +1081,7 @@ MonoBehaviour:
   rootHealthPoints: 20
   spawnInbetweenTime: 0.2
   roundCooldown: 5
-  maxSpawnCount: 50
+  maxSpawnCount: 15
   enableRandomAmount: 1
   minSpawnCount: 10
   enemyTypes:
@@ -1094,10 +1094,12 @@ MonoBehaviour:
   - 12
   - 26
   - 7
+  enemyWaveType: 000000000100000002000000030000000000000001000000020000000300000000000000
   nextSpawnedUnitType: 0
   fallSpeed: 1
   buildEnabled: 0
   gameOver: 0
+  waveCount: 0
   enemiesAlive: []
   remainingTimeTillNextWave: 0
   targetFrameRate: 60
