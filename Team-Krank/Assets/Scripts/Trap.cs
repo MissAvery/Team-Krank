@@ -7,8 +7,9 @@ public class Trap : MonoBehaviour
    
     public string type;
     public Collider2D col;
-    private string mode;
+    public string mode;
     private GameObject trapPoint;
+    private 
     void Start()
     {
         mode = "InRound";     //temporary
@@ -92,7 +93,8 @@ public class Trap : MonoBehaviour
                 //other.gameObject.SlowDown();
             break;
             case "Spikes":
-                //other.gameObject.MultipleDamage(1);
+                MultipleDamage(other.gameObject);
+                //other.gameObject.SetDamageBool(true);
             break;
             }
         }
@@ -103,10 +105,22 @@ public class Trap : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             switch (type){
                 case "Spikes":
-                    //other.gameObject.StopMultipleDamage();
+                    //other.gameObject.SetDamageBool(false);
                 break;
             }
         }
+    }
+
+    public void MultipleDamage(GameObject enemy){
+        /*if (other.gameObject.GetDamageBool()){
+            enemy.GetComponent<>().Damage(1);
+            Invoke("MultipleDamage",0.5f);
+        }*/
+        
+    }
+
+    public void StopDamage(){
+
     }
 
 }
