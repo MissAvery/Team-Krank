@@ -45,6 +45,9 @@ public class TrapPoint : MonoBehaviour
             trapUI.enabled = true;
             openUI = true;
             button.enabled = false;
+
+            //Temporary
+            FindObjectOfType<AudioManager>().Play("TestSound");
         }
     }
    }

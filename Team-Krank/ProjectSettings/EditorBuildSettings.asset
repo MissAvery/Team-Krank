@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: d1a36b2263fe131478b678695cb408be
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d5da2cbb346e3e44fa43043ad06941f9
+  - enabled: 1
+    path: Assets/Scenes/Tughan.unity
+    guid: 91684de5a7307da4991ecd616ed5af7c
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 00505a1f9fd64114eb5cf3198486f0cb
   m_configObjects: {}
