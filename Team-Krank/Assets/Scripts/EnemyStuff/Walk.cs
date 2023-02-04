@@ -8,7 +8,7 @@ public class Walk : MonoBehaviour
     private Transform[] pathpoints;
 
     [SerializeField]
-    private float walkSpeed;
+    public float walkSpeed;
 
     private int pathpointIndex = 0;
 
