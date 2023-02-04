@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Wall
   col: {fileID: 4115985428032469633}
+  mode: 
 --- !u!212 &5838120666529329808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -217,8 +218,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e96fe77180a4d1447b8be765cda38e57, type: 3}
-  m_Color: {r: 0.5, g: 0.30418152, b: 0.058962256, a: 1}
+  m_Sprite: {fileID: -1633466701, guid: 9428c3fc743f0314cbb1f4feec7cc294, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
