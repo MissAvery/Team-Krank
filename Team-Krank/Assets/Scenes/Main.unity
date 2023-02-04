@@ -1081,9 +1081,9 @@ MonoBehaviour:
   rootHealthPoints: 20
   spawnInbetweenTime: 0.2
   roundCooldown: 5
-  maxSpawnCount: 0a0000000700000010000000
+  maxSpawnCount: 15
   enableRandomAmount: 1
-  minSpawnCount: 030000000100000002000000
+  minSpawnCount: 10
   enemyTypes:
   - {fileID: 3903247684008350008, guid: be9e847a59ec41444a7271660cccb20b, type: 3}
   - {fileID: 3903247684008350008, guid: 1650f9e5bb0354246ad5b598883358ce, type: 3}
