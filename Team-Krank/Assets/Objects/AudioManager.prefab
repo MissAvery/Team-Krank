@@ -47,15 +47,99 @@ MonoBehaviour:
   volumeM: 0
   volumeS: 0
   sounds:
-  - name: TestSound
-    clip: {fileID: 8300000, guid: 6e24307cfa211cf41a3dadad045be743, type: 3}
-    volume: 0.1
+  - name: Intro1
+    clip: {fileID: 8300000, guid: 52eda2956500b2e4f9bbb64b57783f68, type: 3}
+    volume: 0.5
     pitch: 1
     type: Sound
     source: {fileID: 0}
-  - name: TestMusic
-    clip: {fileID: 8300000, guid: 6e24307cfa211cf41a3dadad045be743, type: 3}
-    volume: 0.1
+  - name: Intro2
+    clip: {fileID: 8300000, guid: 2b971d2576d8af246b0b49ffcb577a38, type: 3}
+    volume: 0.5
     pitch: 1
-    type: Music
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro3
+    clip: {fileID: 8300000, guid: fb1145cea02c938438dae5c20297f5fd, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro4
+    clip: {fileID: 8300000, guid: e5776096255b79644b6938e1b5da7ece, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro5
+    clip: {fileID: 8300000, guid: 2af0a7ac2bc386a419c4d6000ea02602, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro6
+    clip: {fileID: 8300000, guid: 94eb1ce9cb115c245bf9b51db7b5d9a2, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro7
+    clip: {fileID: 8300000, guid: a404b12257c0c8c4382d0c0467636982, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro8
+    clip: {fileID: 8300000, guid: ac16c6379a4b3824d8e438417bebb157, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro9
+    clip: {fileID: 8300000, guid: 4dcac5c9ff60d824bb8aea0f536a9e05, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro10
+    clip: {fileID: 8300000, guid: c53cdb1b7dbe86a4fb5dabe417a01f49, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro11
+    clip: {fileID: 8300000, guid: 71b427f0a0349454e86ba1e0b7a0f749, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro12
+    clip: {fileID: 8300000, guid: 876f082b99ac12249a4e371da433a1f6, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro13
+    clip: {fileID: 8300000, guid: 9c32c0db603b4fd408a1ef493bcd95f1, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro14
+    clip: {fileID: 8300000, guid: 0ffe436c44b26f04881158db36175763, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro15
+    clip: {fileID: 8300000, guid: 7a83bb3fff8bea54184c165f2cf49a6b, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro16
+    clip: {fileID: 8300000, guid: ce46deabba5d9854fad7f98030034f90, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
     source: {fileID: 0}
