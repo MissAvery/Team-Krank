@@ -2,13 +2,22 @@
     "name": "Pause",
     "maps": [
         {
-            "name": "Pause",
+            "name": "Input",
             "id": "85cb2a8b-c1e6-4907-ac58-ff9d53fc1f0b",
             "actions": [
                 {
                     "name": "Pause",
                     "type": "Button",
                     "id": "231241d4-f6e6-4b07-bd52-355166143dc0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextSpeech",
+                    "type": "Button",
+                    "id": "821bff09-fb45-4544-92fd-72098422efaa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -24,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85b4197a-9e4e-4941-83a5-1efd6b599468",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextSpeech",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
