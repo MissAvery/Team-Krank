@@ -18,7 +18,7 @@ public class BasicBalacing : MonoBehaviour {
     //Die Punkte müssen noch irgendwo eingebaut werden
     public float fallSpeed = 2f;
     //public float slowFactor = 0.5f;
-
+    public float pathCompletedThreshold;
 
 
 

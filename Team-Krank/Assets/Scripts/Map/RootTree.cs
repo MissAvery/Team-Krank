@@ -7,7 +7,7 @@ public class RootTree : MonoBehaviour
     GameObject[] GlobalBasicBalancing;
     BasicBalacing balancing;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         //if(other enemyType1)...
 
         balancing.rootHealthPoints -= 1;

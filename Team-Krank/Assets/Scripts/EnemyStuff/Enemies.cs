@@ -35,16 +35,17 @@ public class Enemies : MonoBehaviour
     private void Update (){
         walki();
     }
-
+    bool alreadyTeleported = false;
     public void walki(){
 
         if (pathpointIndex <= balancing.pathPoints.Count - 1){
 
              transform.position = Vector2.MoveTowards(transform.position, balancing.pathPoints[pathpointIndex].transform.position, walkSpeed * Time.deltaTime);
 
-            if (transform.position == balancing.pathPoints[pathpointIndex].transform.position){
-
+            //if (transform.position == balancing.pathPoints[pathpointIndex].transform.position){
+            if (/*ownApproximate(transform.position.x, balancing.pathPoints[pathpointIndex].transform.position.x, balancing.pathCompletedThreshold) && ownApproximate(transform.position.y, balancing.pathPoints[pathpointIndex].transform.position.y, balancing.pathCompletedThreshold) ||*/ alreadyTeleported){
                 pathpointIndex += 1;
+                alreadyTeleported = false;
             }
         }
     }
@@ -110,12 +111,12 @@ public class Enemies : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Teleporter")) {
+    if (other.CompareTag("Teleporter")) {
             Teleporter teleporter = other.GetComponent<Teleporter>();
             if (teleporter.destinationTeleport) {
-
                 Debug.Log("Teleported");
                 transform.position = teleporter.destinationTeleport.transform.position;
+                alreadyTeleported = true;
             }
         }
     }
@@ -154,5 +155,9 @@ public class Enemies : MonoBehaviour
         balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
         // local variables
         receiveBalancingValues();
+    }
+
+    bool ownApproximate(float a, float b, float threshold) {
+        return ((a - b) < 0 ? ((a - b) * -1) : (a - b)) <= threshold;
     }
 }
