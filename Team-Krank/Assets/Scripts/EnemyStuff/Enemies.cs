@@ -120,7 +120,8 @@ public class Enemies : MonoBehaviour
                 }
 
                 /*if (GetComponent<Walk>() != null){*/
-                enemy.SetActive(false);
+                //enemy.SetActive(false);
+                Destroy(enemy);
                 dead = true;
             }
 
