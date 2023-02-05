@@ -30,8 +30,12 @@ public class BasicBalacing : MonoBehaviour {
     [Header("Debug")]
     public List<GameObject> enemiesAlive = new List<GameObject>();
     public float remainingTimeTillNextWave;
-    public bool waitForPlayerInput = false;
+    public bool activateWaitForPlayerInput = false;
     public int targetFrameRate;
+
+
+
+
 
 
 
