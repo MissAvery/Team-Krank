@@ -54,14 +54,14 @@ public class BasicBalacing : MonoBehaviour {
         AddPathPoints();
     }
 
-    private void Update() {
-        if (buildEnabled) {
-            Timer.SetActive(true);
-            float seconds = Mathf.FloorToInt(remainingTimeTillNextWave % 60);
-            Timer.GetComponent<Text>().text = seconds.ToString();
+    //private void Update() {
+    //    if (buildEnabled) {
+    //        Timer.SetActive(true);
+    //        float seconds = Mathf.FloorToInt(remainingTimeTillNextWave % 60);
+    //        Timer.GetComponent<Text>().text = seconds.ToString();
 
-        }
-        else { Timer.SetActive(false); }
-    }
+    //    }
+    //    else { Timer.SetActive(false); }
+    //}
 
 }
