@@ -29,7 +29,6 @@ public class BasicBalacing : MonoBehaviour {
     public bool gameOver = false;
     public int waveCount = 0;
     public List<GameObject> pathPoints = new List<GameObject>();
-    public List<GameObject> teleportPoints = new List<GameObject>();
 
     [Header("Debug")]
     public List<GameObject> enemiesAlive = new List<GameObject>();
@@ -39,13 +38,9 @@ public class BasicBalacing : MonoBehaviour {
 
 
     [SerializeField] GameObject pathParent;
-    [SerializeField] GameObject teleportParent;
     void AddPathPoints() {
         foreach (Transform child in pathParent.transform) {
             pathPoints.Add(child.gameObject);
-        }
-        foreach (Transform child in teleportParent.transform) {
-            teleportPoints.Add(child.gameObject);
         }
     }
 
@@ -53,4 +48,5 @@ public class BasicBalacing : MonoBehaviour {
         Application.targetFrameRate = targetFrameRate;
         AddPathPoints();
     }
+
 }
