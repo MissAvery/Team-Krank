@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    // Hier wurden die Paths aus dem Global Balancing übernommen mittels balancing.pathPoints
+    // Hier wurden die Paths aus dem Global Balancing ï¿½bernommen mittels balancing.pathPoints
     //[SerializeField]
     //private Transform[] pathPoints;
 
@@ -30,6 +30,38 @@ public class Enemies : MonoBehaviour
     private int pathpointIndex = 0;
     private void Start (){
         transform.position = balancing.pathPoints[pathpointIndex].transform.position;
+
+        if(Maus){
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("MausSpawn1");
+            } else {
+                FindObjectOfType<AudioManager>().Play("MausSpawn2");
+            }
+        } else if(Ameise){
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("AmeiseSpawn1");
+            } else {
+                FindObjectOfType<AudioManager>().Play("AmeiseSpawn2");
+            }
+        } else if(MarienkÃ¤fer){
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("MariSpawnt1");
+            } else if (rand ==2){
+                FindObjectOfType<AudioManager>().Play("MariSpawnt2");
+            } else {
+                FindObjectOfType<AudioManager>().Play("MariSpawnt3");
+            }
+        } else if(Kellerassel){
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("AsselSpawn1");
+            } else {
+                FindObjectOfType<AudioManager>().Play("AsselSpawn2");
+            }
+        } 
     }
 
     private void Update (){
@@ -71,6 +103,22 @@ public class Enemies : MonoBehaviour
         else {
             if (dead == false){
                 
+                if(!Maus){
+                    int rand = Random.Range(1,3);
+                    if (rand == 1){
+                        FindObjectOfType<AudioManager>().Play("InsektKill1");
+                    } else {
+                        FindObjectOfType<AudioManager>().Play("InsektKill2");
+                    }
+                } else{
+                    int rand = Random.Range(1,3);
+                    if (rand == 1){
+                        FindObjectOfType<AudioManager>().Play("MausKill1");
+                    } else {
+                        FindObjectOfType<AudioManager>().Play("MausKill2");
+                    }
+                }
+
                 /*if (GetComponent<Walk>() != null){*/
                 enemy.SetActive(false);
                 dead = true;
@@ -129,7 +177,7 @@ public class Enemies : MonoBehaviour
 
 
 
-    [SerializeField] bool Kellerassel, Ameise, Marienkäfer, Maus;
+    [SerializeField] bool Kellerassel, Ameise, MarienkÃ¤fer, Maus;
 
     void ReceiveBalancingValues() {
 
@@ -141,7 +189,7 @@ public class Enemies : MonoBehaviour
             startHealth = balancing.enemyStartHealth[1];
             walkSpeed = balancing.enemySpeed[1] / 100;
         }
-        else if (Marienkäfer) {
+        else if (MarienkÃ¤fer) {
             startHealth = balancing.enemyStartHealth[2];
             walkSpeed = balancing.enemySpeed[2] / 100;
         }
