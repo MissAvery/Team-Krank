@@ -62,19 +62,18 @@ MonoBehaviour:
   - 55
   - 100
   enemySpeed:
-  - 600
-  - 2000
-  - 2000
-  - 1000
-  fallSpeed: 1
-  pathCompletedThreshold: 1.004
+  - 400
+  - 800
+  - 340
+  - 500
   useTeleportOrPath: 0
   buildEnabled: 0
   gameOver: 0
+  win: 0
   waveCount: 0
   pathPoints: []
   enemiesAlive: []
   remainingTimeTillNextWave: 0
-  waitForPlayerInput: 0
+  activateWaitForPlayerInput: 0
   targetFrameRate: 60
   pathParent: {fileID: 0}
