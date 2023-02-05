@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54d58c5cf86c6024a9e81cc6bf38c735
+guid: ed5d85c98e47e584c84124ad21b00492
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: regler_0
+      name: Mausfront_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 55
-        width: 496
-        height: 65
+        x: 104
+        y: 25
+        width: 291
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed61868018798004da422f0abe91d57c
-      internalID: -2115105451
+      spriteID: 3c41b63805d1558439a986b253fc9151
+      internalID: 1149913037
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      regler_0: -2115105451
+      Mausfront_0: 1149913037
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

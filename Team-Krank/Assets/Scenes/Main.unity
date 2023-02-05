@@ -536,12 +536,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2414413488210150489, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414413488210150489, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414413488210150489, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2414413488384911624, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2414413488384911624, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
       propertyPath: m_AnchorMax.y
@@ -668,21 +676,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2414413489688050950, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414413489688050950, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414413489688050950, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2414413490312322999, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2414413490312322999, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8031590726275000571, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1187175086}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb77b3d5e6cc774c9f6711f163b5b72, type: 3}
 --- !u!1 &697534596 stripped
@@ -2565,7 +2577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1672226341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3267,8 +3279,6 @@ MonoBehaviour:
   - 2000
   - 2000
   - 1000
-  fallSpeed: 1
-  pathCompletedThreshold: 1.004
   useTeleportOrPath: 0
   buildEnabled: 0
   gameOver: 0
@@ -3276,6 +3286,7 @@ MonoBehaviour:
   pathPoints: []
   enemiesAlive: []
   remainingTimeTillNextWave: 0
+  waitForPlayerInput: 0
   targetFrameRate: 60
   pathParent: {fileID: 766878883}
 --- !u!4 &1870815866
@@ -3360,11 +3371,11 @@ MonoBehaviour:
   TreeText: {fileID: 1470952375}
   EnemyPicture: {fileID: 1475115856}
   EnemyText: {fileID: 1442052812}
-  narrator: {fileID: 21300000, guid: 3b9c9bdef342bb042a635b0dd50d680a, type: 3}
+  narrator: {fileID: 21300000, guid: 21939f32ef2902544a8c190068a728e0, type: 3}
   isopod: {fileID: -1252942249, guid: ca055f337c3b1e643803be7f9ff6b647, type: 3}
-  ladybug: {fileID: 1926736339, guid: 6a5cf61be963df24fa51152ffc80d7e0, type: 3}
+  ladybug: {fileID: -622873128, guid: 02cdfb13267d8e44496cb2103bbfeae1, type: 3}
   ant: {fileID: -1949299922, guid: b4fca3b6dc6cdc342a621d486b2c85e0, type: 3}
-  mouse: {fileID: 242778597, guid: 307cdf301b7421f408f6579a6ed11840, type: 3}
+  mouse: {fileID: 1149913037, guid: ed5d85c98e47e584c84124ad21b00492, type: 3}
 --- !u!4 &1882298190
 Transform:
   m_ObjectHideFlags: 0

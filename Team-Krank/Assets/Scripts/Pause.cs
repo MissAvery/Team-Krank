@@ -62,6 +62,8 @@ public class Pause : MonoBehaviour
                 TreePicture.SetActive(false);
                 TreeText.SetActive(false);
                 EnemyPicture.GetComponent<Image>().sprite = narrator;
+                EnemyPicture.GetComponent<Image>().SetNativeSize();
+                EnemyPicture.GetComponent<Image>().rectTransform.localScale  = new Vector3(.3f, .3f,1);
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "The plains of Great-Parsnip! They bloom prosperous and the sun is flooding the land with bright light and warmth.";
                 FindObjectOfType<AudioManager>().Play("Intro1");
             break;
@@ -169,7 +171,10 @@ public class Pause : MonoBehaviour
                 EnemyText.SetActive(true);
                 EnemyPicture.GetComponent<Image>().sprite = isopod;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
+                EnemyPicture.GetComponent<Image>().rectTransform.localScale  = new Vector3(1, 1,1);
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Woodlouses rule!!! Hell yeah, baby! That´s what I´m talking about! Sweet, juicy roots! C´mon guys, let´s get ready to niiiibbleeee!";
+                FindObjectOfType<AudioManager>().Play("Intro17");
+                FindObjectOfType<AudioManager>().Stop("Intro16");
             break;
             case 17:
                 TreePicture.SetActive(true);
@@ -177,6 +182,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.SetActive(false);
                 EnemyText.SetActive(false);
                 TreeText.GetComponent<TMPro.TextMeshProUGUI>().text = "They only speak one language. The language of: IN YOUR FACE! So, take good use of my roots to attack them.";
+                FindObjectOfType<AudioManager>().Play("Intro18");
+                FindObjectOfType<AudioManager>().Stop("Intro17");
             break;
             case 18:
                 //intro = false;
@@ -189,6 +196,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.GetComponent<Image>().sprite = ladybug;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "The name´s Bug. Ladybug. Roots please. Sludgy, not shaked. Pleased to eat you.";
+                FindObjectOfType<AudioManager>().Play("Intro19");
+                FindObjectOfType<AudioManager>().Stop("Intro18");
             break;
             case 20:
                 TreePicture.SetActive(true);
@@ -196,6 +205,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.SetActive(false);
                 EnemyText.SetActive(false);
                 TreeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Not them! Hey, player! Watch out for those flying *****! They can´t be hurt by roots on the ground.";
+                FindObjectOfType<AudioManager>().Play("Intro20");
+                FindObjectOfType<AudioManager>().Stop("Intro19");
             break;
             case 21:
                 //intro = false;
@@ -208,6 +219,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.GetComponent<Image>().sprite = ant;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "YES! It´s us! The speedy speed-ants of lightning speed! Go, go, go, go, go!!!! GET TO THE TOP! WOHOOO!";
+                FindObjectOfType<AudioManager>().Play("Intro21");
+                FindObjectOfType<AudioManager>().Stop("Intro20");
             break;
             case 23:
                 TreePicture.SetActive(true);
@@ -215,6 +228,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.SetActive(false);
                 EnemyText.SetActive(false);
                 TreeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Those hyperactive ***** are really fast! But they lack constitution.";
+                FindObjectOfType<AudioManager>().Play("Intro22");
+                FindObjectOfType<AudioManager>().Stop("Intro21");
             break;
             case 24:
                 //intro = false;
@@ -227,6 +242,8 @@ public class Pause : MonoBehaviour
                 EnemyPicture.GetComponent<Image>().sprite = mouse;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Mmhh! Uhh! That smells good. I can smell those big juicy roots of yours, tree. I´ll come for you. For your roots!";
+                FindObjectOfType<AudioManager>().Play("Intro23");
+                FindObjectOfType<AudioManager>().Stop("Intro2");
             break;
             case 26:
                 TreePicture.SetActive(true);
@@ -234,9 +251,14 @@ public class Pause : MonoBehaviour
                 EnemyPicture.SetActive(false);
                 EnemyText.SetActive(false);
                 TreeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Damn, that´s the worst of all beasts! Brace yourself, player! They´re pretty tough!";
+                FindObjectOfType<AudioManager>().Play("Intro24");
+                FindObjectOfType<AudioManager>().Stop("Intro23");
             break;
             case 27:
                 //intro = false;
+                FindObjectOfType<AudioManager>().Stop("Intro24");
+                TreePicture.SetActive(false);
+                TreeText.SetActive(false);
             break;
         }
         introProgress += 1;
