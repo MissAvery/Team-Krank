@@ -218,6 +218,7 @@ public class Pause : MonoBehaviour
                 EnemyText.SetActive(true);
                 EnemyPicture.GetComponent<Image>().sprite = ant;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
+                EnemyPicture.GetComponent<Image>().rectTransform.localScale  = new Vector3(-1, 1,1);
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "YES! It´s us! The speedy speed-ants of lightning speed! Go, go, go, go, go!!!! GET TO THE TOP! WOHOOO!";
                 FindObjectOfType<AudioManager>().Play("Intro21");
                 FindObjectOfType<AudioManager>().Stop("Intro20");
@@ -241,6 +242,7 @@ public class Pause : MonoBehaviour
                 EnemyText.SetActive(true);
                 EnemyPicture.GetComponent<Image>().sprite = mouse;
                 EnemyPicture.GetComponent<Image>().SetNativeSize();
+                EnemyPicture.GetComponent<Image>().rectTransform.localScale  = new Vector3(1, 1,1);
                 EnemyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Mmhh! Uhh! That smells good. I can smell those big juicy roots of yours, tree. I´ll come for you. For your roots!";
                 FindObjectOfType<AudioManager>().Play("Intro23");
                 FindObjectOfType<AudioManager>().Stop("Intro2");
