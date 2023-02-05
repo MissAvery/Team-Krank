@@ -42,11 +42,17 @@ public class Enemies : MonoBehaviour
 
              transform.position = Vector2.MoveTowards(transform.position, balancing.pathPoints[pathpointIndex].transform.position, walkSpeed * Time.deltaTime);
 
-            //if (transform.position == balancing.pathPoints[pathpointIndex].transform.position){
-            if (/*ownApproximate(transform.position.x, balancing.pathPoints[pathpointIndex].transform.position.x, balancing.pathCompletedThreshold) && ownApproximate(transform.position.y, balancing.pathPoints[pathpointIndex].transform.position.y, balancing.pathCompletedThreshold) ||*/ alreadyTeleported){
-                pathpointIndex += 1;
-                alreadyTeleported = false;
+            if (!balancing.useTeleportOrPath) {
+                if (alreadyTeleported) {
+                    pathpointIndex += 1;
+                    alreadyTeleported = false;
+                }
             }
+            //if (!balancing.useTeleportOrPath) {
+            //    if (ownApproximate(transform.position.x, balancing.pathPoints[pathpointIndex].transform.position.x, balancing.pathCompletedThreshold) && ownApproximate(transform.position.y, balancing.pathPoints[pathpointIndex].transform.position.y, balancing.pathCompletedThreshold)) {
+            //        pathpointIndex += 1;
+            //    }
+            //}
         }
     }
 

@@ -39,13 +39,9 @@ public class BasicBalacing : MonoBehaviour {
 
 
     [SerializeField] GameObject pathParent;
-    [SerializeField] GameObject teleportParent;
     void AddPathPoints() {
         foreach (Transform child in pathParent.transform) {
             pathPoints.Add(child.gameObject);
-        }
-        foreach (Transform child in teleportParent.transform) {
-            teleportPoints.Add(child.gameObject);
         }
     }
 
@@ -53,4 +49,5 @@ public class BasicBalacing : MonoBehaviour {
         Application.targetFrameRate = targetFrameRate;
         AddPathPoints();
     }
+
 }
