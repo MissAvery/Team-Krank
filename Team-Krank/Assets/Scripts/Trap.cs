@@ -86,19 +86,19 @@ public class Trap : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             switch (type){
             case "Strong":
-                //other.gameObject.Damage(15);
+                other.gameObject.GetComponent<Enemies>().DooDmg(15);
             break;
             case "Wall":
-                //other.gameObject.Damage(5);
+                other.gameObject.GetComponent<Enemies>().DooDmg(5);
             break;
             case "Multiple":
-                //other.gameObject.Damage(5);
+                other.gameObject.GetComponent<Enemies>().DooDmg(5);
             break;
             case "Weakening":
-                //other.gameObject.Weakening();
+               other.gameObject.GetComponent<Enemies>().DoPercDmg(10);
             break;
             case "Slowness":
-                //other.gameObject.SlowDown();
+                other.gameObject.GetComponent<Enemies>().SlowDown();
                 int rand = Random.Range(1,3);
                 if (rand == 1){
                     FindObjectOfType<AudioManager>().Play("Verlangsamung1");
@@ -108,7 +108,7 @@ public class Trap : MonoBehaviour
             break;
             case "Spikes":
                 MultipleDamage(other.gameObject);
-                //other.gameObject.SetDamageBool(true);
+                other.gameObject.GetComponent<Enemies>().SetDamageBool(true);
             break;
             }
         }
@@ -119,17 +119,17 @@ public class Trap : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             switch (type){
                 case "Spikes":
-                    //other.gameObject.SetDamageBool(false);
+                    other.gameObject.GetComponent<Enemies>().SetDamageBool(false);
                 break;
             }
         }
     }
 
     public void MultipleDamage(GameObject enemy){
-        /*if (other.gameObject.GetDamageBool()){
-            enemy.GetComponent<>().Damage(1);
+        if (enemy.GetComponent<Enemies>().GetDamageBool()){
+            enemy.GetComponent<Enemies>().DooDmg(1);
             Invoke("MultipleDamage",0.5f);
-        }*/
+        }
         
     }
 
