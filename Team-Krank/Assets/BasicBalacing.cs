@@ -15,12 +15,9 @@ public class BasicBalacing : MonoBehaviour {
 
     public List<float> enemyStartHealth = new List<float>();
     public List<float> enemySpeed = new List<float>();
-    //Die Punkte müssen noch irgendwo eingebaut werden
-    public float fallSpeed = 2f;
-    //public float slowFactor = 0.5f;
-
-
-
+    //public float pathCompletedThreshold;
+    // Outdated
+    public bool useTeleportOrPath;
 
 
 
@@ -33,6 +30,7 @@ public class BasicBalacing : MonoBehaviour {
     [Header("Debug")]
     public List<GameObject> enemiesAlive = new List<GameObject>();
     public float remainingTimeTillNextWave;
+    public bool waitForPlayerInput = false;
     public int targetFrameRate;
 
 
@@ -48,4 +46,5 @@ public class BasicBalacing : MonoBehaviour {
         Application.targetFrameRate = targetFrameRate;
         AddPathPoints();
     }
+
 }

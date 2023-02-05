@@ -143,3 +143,189 @@ MonoBehaviour:
     pitch: 1
     type: Sound
     source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: 28d614ce6168b724d91e8b2b6ed10844, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: FallenMenu
+    clip: {fileID: 8300000, guid: 560cbcc1ba6cce74c9ba4ff31cc2207c, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: BaumDamage
+    clip: {fileID: 8300000, guid: 736d4c9bde6e11440bf537f2c96336e9, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: FalleEntfernen
+    clip: {fileID: 8300000, guid: bfd8622530339e342ae9e2ffae1c9837, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: FallePlatzieren1
+    clip: {fileID: 8300000, guid: 1d6838d038c6d7241932f3495d68552d, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: FallePlatzieren2
+    clip: {fileID: 8300000, guid: 30b44530898033149b2c450513b4f7de, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Verlangsamung1
+    clip: {fileID: 8300000, guid: 361bb0a255e4136428fdb4eff13e0072, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Verlangsamung2
+    clip: {fileID: 8300000, guid: 96aaa7580d0dc6b4fbba7dd1ccfd06ef, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: WurzelAngriff1
+    clip: {fileID: 8300000, guid: b6f425343a610944b84856bcbc2d826c, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: WurzelAngriff2
+    clip: {fileID: 8300000, guid: e08fb2746d6716c49a0bbd432b446b30, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: AmeiseSpawn1
+    clip: {fileID: 8300000, guid: f351cc722c89ea14d909c43d78671a55, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: AmeiseSpawn2
+    clip: {fileID: 8300000, guid: f8432fef80ade0947875b00d808077b2, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: AsselSpawn1
+    clip: {fileID: 8300000, guid: e1f32d28e221b714390727861d7fd1fe, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: AsselSpawn2
+    clip: {fileID: 8300000, guid: 825e9f9faa9c2aa489c7501be347f442, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MariSpawnt1
+    clip: {fileID: 8300000, guid: e5f61cb28076fb24a872ee1f557bc250, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MariSpawnt2
+    clip: {fileID: 8300000, guid: 03fd2e805759138488b5e20a7259bdf1, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MariSpawnt3
+    clip: {fileID: 8300000, guid: d9fe412152ea6a7438ac1dbba712d097, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: InsektKill1
+    clip: {fileID: 8300000, guid: 5f2ab114fca981744a44c43b280d174f, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: InsektKill2
+    clip: {fileID: 8300000, guid: bfe70047a07ddee449b5ea1a7226c608, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MausSpawn1
+    clip: {fileID: 8300000, guid: d269bc415abe3da4f9e7e36a0e73a036, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MausSpawn2
+    clip: {fileID: 8300000, guid: 3071b01e8451ae94ca2f64982c273bd3, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MausKill1
+    clip: {fileID: 8300000, guid: 9776b9152de75b947a3b8b7e11be56db, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: MausKill2
+    clip: {fileID: 8300000, guid: 7585fad16c214004bba33c1e4e416256, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro17
+    clip: {fileID: 8300000, guid: 00463cef60f9a914aa1bc38791e3c3a4, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro18
+    clip: {fileID: 8300000, guid: 6fe2362945ff2ff40b75ca81c5fe89a6, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro19
+    clip: {fileID: 8300000, guid: 312b05b3f2e3f624bbc2d263ee1d1afb, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro20
+    clip: {fileID: 8300000, guid: f9bc67730751c7c43a062307b3551de7, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro21
+    clip: {fileID: 8300000, guid: 5627fc4a9ec01cd4289b5db986a02ba8, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro22
+    clip: {fileID: 8300000, guid: 1b6fa405fe5bab24c878deb2f781b0c7, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro23
+    clip: {fileID: 8300000, guid: 1567d332906409240a0abdbdad765ea5, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}
+  - name: Intro24
+    clip: {fileID: 8300000, guid: c96c66ebb98092348afc89cf9ed9b873, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Sound
+    source: {fileID: 0}

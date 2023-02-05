@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2682555188175992273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2682555188175992275}
+  - component: {fileID: 2682555188175992272}
+  m_Layer: 0
+  m_Name: Global Balancing Manager
+  m_TagString: GlobalBalancing
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2682555188175992275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682555188175992273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.245435, y: 0.8892156, z: 0.25340804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2682555188175992272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682555188175992273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81923cf0d1db1a64a91a9c73bcb81795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootHealthPoints: 20000
+  spawnInbetweenTime: 0.2
+  roundCooldown: 5
+  maxSpawnCount: 2c0100000100000002000000
+  enableRandomAmount: 0
+  minSpawnCount: 030000000100000002000000
+  enemyTypes:
+  - {fileID: 5358201186028922162, guid: 55ee0f1594d5fae48b55563b92d9f136, type: 3}
+  - {fileID: 2432851609677511059, guid: 9c69beb9c878b8444ba2faf82938697e, type: 3}
+  - {fileID: 3341730689396883229, guid: 4ac89c60ca6f3c9429c4449fd852f9f6, type: 3}
+  - {fileID: 3905642514870007553, guid: ffca2977d3a482444ab2e7f91fe6ffd6, type: 3}
+  enemyWaveType: 000000000100000002000000030000000000000001000000020000000300000000000000
+  enemyStartHealth:
+  - 55
+  - 55
+  - 55
+  - 100
+  enemySpeed:
+  - 600
+  - 2000
+  - 2000
+  - 1000
+  fallSpeed: 1
+  pathCompletedThreshold: 1.004
+  useTeleportOrPath: 0
+  buildEnabled: 0
+  gameOver: 0
+  waveCount: 0
+  pathPoints: []
+  enemiesAlive: []
+  remainingTimeTillNextWave: 0
+  waitForPlayerInput: 0
+  targetFrameRate: 60
+  pathParent: {fileID: 0}
