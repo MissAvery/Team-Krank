@@ -28,26 +28,23 @@ public class Trap : MonoBehaviour
             case "Strong":
                 col.enabled = true;
                 Invoke("DeactivateTimer",0.5f);
-                GetComponent<SpriteRenderer>().sprite = active;
+                GetComponent<SpriteRenderer>().sprite = attack;
             break;
             case "Wall":
                 col.enabled = true;
                 Invoke("DeactivateTimer",2f);
-                GetComponent<SpriteRenderer>().sprite = active;
+               GetComponent<SpriteRenderer>().sprite = attack;
             break;
             case "Multiple":
                 col.enabled = true;
                 Invoke("DeactivateTimer",3f);
-                GetComponent<SpriteRenderer>().sprite = active;
+                GetComponent<SpriteRenderer>().sprite = attack;
             break;
             /*case "Weakening":
                 col.enabled = true;
                 Invoke("DeactivateTimer",2f);
-            break;
-            case "Trapdoor":
-                    //Öffne Trapdoor
-                    Invoke("DeactivateTimer",6f);
             break;*/
+            
             }
             int rand = Random.Range(1,3);
             if (rand == 1 && (type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening")){
