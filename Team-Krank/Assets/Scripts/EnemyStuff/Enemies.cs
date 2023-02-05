@@ -109,18 +109,15 @@ public class Enemies : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider other) {
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Teleporter")) {
             Teleporter teleporter = other.GetComponent<Teleporter>();
             if (teleporter.destinationTeleport) {
-                Teleport(teleporter);
+
+                Debug.Log("Teleported");
+                transform.position = teleporter.destinationTeleport.transform.position;
             }
         }
-    }
-
-
-    void Teleport(Teleporter teleporter) {
-
     }
 
 
