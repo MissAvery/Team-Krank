@@ -53,6 +53,9 @@ public class TrapPoint : MonoBehaviour
 
    public void Setmode(string newMode){
         mode = newMode;
+        if (trap != null){
+            trap.GetComponent<Trap>().Setmode("newMode");
+        }
     }
 
     public void BuildTrap(string trapType){
@@ -76,7 +79,7 @@ public class TrapPoint : MonoBehaviour
                 trap = Instantiate(Spikes, transform.position + new Vector3(0,-0.6f,0), Quaternion.identity);
             break;
             case "Slowness":
-                trap = Instantiate(SlownessField, transform.position + new Vector3(0,-0.13f,0), Quaternion.identity);
+                trap = Instantiate(SlownessField, transform.position + new Vector3(0,-0.1f,0), Quaternion.identity);
             break;
             }
             trap.GetComponent<Trap>().SetTrapPoint(gameObject);

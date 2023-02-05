@@ -48,6 +48,9 @@ public class UnitSpawn : MonoBehaviour {
                     balancing.waveCount = balancing.waveCount + 1;
                     balancing.buildEnabled = false;
 
+                    foreach (GameObject trapP in GameObject.Find("TrapPointList.").GetComponent<PointList>().points){       //Enables Traps
+                        trapP.GetComponent<TrapPoint>().Setmode("InRound");
+                    }
 
                 }
                 else {
@@ -73,6 +76,11 @@ public class UnitSpawn : MonoBehaviour {
                     balancing.waveCount = balancing.waveCount + 1;
                     balancing.buildEnabled = false;
                     runOnce = false;
+
+                    foreach (GameObject trapP in GameObject.Find("TrapPointList.").GetComponent<PointList>().points){       //Enables Traps
+                        trapP.GetComponent<TrapPoint>().Setmode("InRound");
+                    }
+
                 }
                 else {
                     yield return new WaitForSeconds(localSpawntime);
@@ -86,6 +94,11 @@ public class UnitSpawn : MonoBehaviour {
     void checkIfWaveCleared() {
         if (balancing.enemiesAlive.Count <= 0) {
             balancing.buildEnabled = true;
+
+            foreach (GameObject trapP in GameObject.Find("TrapPointList.").GetComponent<PointList>().points){            //Enables Trap-placement
+                trapP.GetComponent<TrapPoint>().Setmode("BetweenRounds");
+            }
+
         }
         //check Ob Gegner dod
         else {

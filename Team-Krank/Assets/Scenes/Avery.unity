@@ -1122,6 +1122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrapPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5990437206716164711, guid: 7b122fdf899785445bb4457160c9397c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8243700792024320632, guid: 7b122fdf899785445bb4457160c9397c, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1422,7 +1426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1753740917
 MonoBehaviour:
   m_ObjectHideFlags: 0
