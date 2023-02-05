@@ -44,13 +44,21 @@ public class Trap : MonoBehaviour
                     Invoke("DeactivateTimer",6f);
             break;
             }
+            int rand = Random.Range(1,3);
+            if (rand == 1 && (type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening")){
+                FindObjectOfType<AudioManager>().Play("WurzelAngriff1");
+            } else if (type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening"){
+                FindObjectOfType<AudioManager>().Play("WurzelAngriff2");
+            }
         } 
         
         else if(mode == "BetweenRounds"){
             trapPoint.GetComponent<TrapPoint>().SetUsedFalse();
+            FindObjectOfType<AudioManager>().Play("FalleEntfernen");
             Remove();
         }
         
+
     }
 
     public void Setmode(string newMode){
@@ -91,6 +99,12 @@ public class Trap : MonoBehaviour
             break;
             case "Slowness":
                 //other.gameObject.SlowDown();
+                int rand = Random.Range(1,3);
+                if (rand == 1){
+                    FindObjectOfType<AudioManager>().Play("Verlangsamung1");
+                } else {
+                    FindObjectOfType<AudioManager>().Play("Verlangsamung2");
+                }
             break;
             case "Spikes":
                 MultipleDamage(other.gameObject);

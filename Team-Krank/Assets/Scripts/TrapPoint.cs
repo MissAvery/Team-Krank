@@ -46,7 +46,7 @@ public class TrapPoint : MonoBehaviour
             trapUI.enabled = true;
             openUI = true;
             button.enabled = false;
-
+            FindObjectOfType<AudioManager>().Play("FallenMenu");
         }
     }
    }
@@ -82,6 +82,13 @@ public class TrapPoint : MonoBehaviour
                 trap = Instantiate(SlownessField, transform.position + new Vector3(0,-0.1f,0), Quaternion.identity);
             break;
             }
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("FallePlatzieren1");
+            } else {
+                FindObjectOfType<AudioManager>().Play("FallePlatzieren2");
+            }
+
             trap.GetComponent<Trap>().SetTrapPoint(gameObject);
             trapUI.enabled = false;
             used = true;
