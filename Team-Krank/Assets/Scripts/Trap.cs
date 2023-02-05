@@ -9,40 +9,45 @@ public class Trap : MonoBehaviour
     public Collider2D col;
     public string mode;
     private GameObject trapPoint;
-    private 
+    private bool cool;
+
+    public Sprite active, cooldown, attack;
     void Start()
     {
-        mode = "BetweenRounds";     //temporary
+        mode = "InRound";     //temporary
 
-        if(type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening"){
+        if(type == "Strong" || type == "Wall" || type == "Multiple"){
             col.enabled = false;
         }
     }
 
     public void Clicked(){
 
-        if (mode == "InRound"){
+        if (mode == "InRound" && !cool){
             switch (type){
             case "Strong":
                 col.enabled = true;
                 Invoke("DeactivateTimer",0.5f);
+                GetComponent<SpriteRenderer>().sprite = active;
             break;
             case "Wall":
                 col.enabled = true;
                 Invoke("DeactivateTimer",2f);
+                GetComponent<SpriteRenderer>().sprite = active;
             break;
             case "Multiple":
                 col.enabled = true;
                 Invoke("DeactivateTimer",3f);
+                GetComponent<SpriteRenderer>().sprite = active;
             break;
-            case "Weakening":
+            /*case "Weakening":
                 col.enabled = true;
                 Invoke("DeactivateTimer",2f);
             break;
             case "Trapdoor":
                     //Öffne Trapdoor
                     Invoke("DeactivateTimer",6f);
-            break;
+            break;*/
             }
             int rand = Random.Range(1,3);
             if (rand == 1 && (type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening")){
@@ -74,8 +79,18 @@ public class Trap : MonoBehaviour
             //Schließe Trapdoor
         } else{
             col.enabled = false;
+            Invoke("Cooldown",5f);
+            cool = true;
+            GetComponent<SpriteRenderer>().sprite = cooldown;
         }
 
+    }
+
+    public void Cooldown(){
+        cool = false;
+        if (type == "Strong" || type == "Wall" || type == "Multiple"){
+            GetComponent<SpriteRenderer>().sprite = active;
+        }
     }
 
     public void SetTrapPoint(GameObject point){
