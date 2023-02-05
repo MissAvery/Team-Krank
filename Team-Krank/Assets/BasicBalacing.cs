@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicBalacing : MonoBehaviour {
     [Header("Balancing")]
@@ -24,6 +25,7 @@ public class BasicBalacing : MonoBehaviour {
     [Header("Transmitted Variables")]
     public bool buildEnabled;
     public bool gameOver = false;
+    public bool win = false;
     public int waveCount = 0;
     public List<GameObject> pathPoints = new List<GameObject>();
 
@@ -32,6 +34,7 @@ public class BasicBalacing : MonoBehaviour {
     public float remainingTimeTillNextWave;
     public bool activateWaitForPlayerInput = false;
     public int targetFrameRate;
+    public GameObject Timer;
 
 
 
@@ -49,6 +52,16 @@ public class BasicBalacing : MonoBehaviour {
     private void Awake() {
         Application.targetFrameRate = targetFrameRate;
         AddPathPoints();
+    }
+
+    private void Update() {
+        if (buildEnabled) {
+            Timer.SetActive(true);
+            float seconds = Mathf.FloorToInt(remainingTimeTillNextWave % 60);
+            Timer.GetComponent<Text>().text = seconds.ToString();
+
+        }
+        else { Timer.SetActive(false); }
     }
 
 }

@@ -14,8 +14,6 @@ public class UnitSpawn : MonoBehaviour {
     int count = 1;
 
 
-
-
     void SpawnUnit() {
         Vector2 spawnPosition = this.transform.position;
         Quaternion spawnRotation = this.transform.rotation;
@@ -25,11 +23,9 @@ public class UnitSpawn : MonoBehaviour {
     }
 
 
-
     private void Awake() {
         StartUp();
         StartCoroutine(SpawnInterval());
-
     }
     bool runOnce = false;
     int rnd;
@@ -84,7 +80,7 @@ public class UnitSpawn : MonoBehaviour {
         bal.waveCount = bal.waveCount + 1;
         bal.buildEnabled = false;
 
-        foreach (GameObject trapP in GameObject.Find("TrapPointList.").GetComponent<PointList>().points) {       //Enables Traps
+        foreach (GameObject trapP in GameObject.Find("TrapPointList").GetComponent<PointList>().points) {       //Enables Traps
             trapP.GetComponent<TrapPoint>().Setmode("InRound");
         }
     }
@@ -93,7 +89,7 @@ public class UnitSpawn : MonoBehaviour {
         if (bal.enemiesAlive.Count <= 0) {
             bal.buildEnabled = true;
 
-            foreach (GameObject trapP in GameObject.Find("TrapPointList.").GetComponent<PointList>().points){            //Enables Trap-placement
+            foreach (GameObject trapP in GameObject.Find("TrapPointList").GetComponent<PointList>().points){            //Enables Trap-placement
                 trapP.GetComponent<TrapPoint>().Setmode("BetweenRounds");
             }
 
@@ -118,18 +114,16 @@ public class UnitSpawn : MonoBehaviour {
 
     private void Update() {
         Timer();
+
+        if (bal.waveCount <= 4) {
+            bal.win = true;
+            StopCoroutine(SpawnInterval());
+            //Time.timeScale = 0.01f;
+        }
     }
     private void FixedUpdate() {
         checkIfWaveCleared();
     }
-
-
-
-
-
-
-
-
 
 
     void StartUp() {
@@ -140,6 +134,7 @@ public class UnitSpawn : MonoBehaviour {
         localCooldown = bal.roundCooldown;
         bal.remainingTimeTillNextWave = bal.roundCooldown;
         localMaxSpawnCount = bal.maxSpawnCount[bal.waveCount];
+
     }
 
 }
