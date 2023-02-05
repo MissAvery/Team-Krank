@@ -37,7 +37,6 @@ public class TrapPoint : MonoBehaviour
     }
 
    public void Clicked(){
-    print("click");
     if(mode == "BetweenRounds"){
         if(!used && !openUI && !locked){
             foreach (GameObject i in list.points){
@@ -47,8 +46,6 @@ public class TrapPoint : MonoBehaviour
             openUI = true;
             button.enabled = false;
 
-            //Temporary
-            FindObjectOfType<AudioManager>().Play("TestSound");
         }
     }
    }
@@ -85,6 +82,7 @@ public class TrapPoint : MonoBehaviour
             trapUI.enabled = false;
             used = true;
             openUI = false;
+            GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void SetUsedFalse(){
