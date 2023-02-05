@@ -29,7 +29,6 @@ public class BasicBalacing : MonoBehaviour {
     public bool gameOver = false;
     public int waveCount = 0;
     public List<GameObject> pathPoints = new List<GameObject>();
-    public List<GameObject> teleportPoints = new List<GameObject>();
 
     [Header("Debug")]
     public List<GameObject> enemiesAlive = new List<GameObject>();
