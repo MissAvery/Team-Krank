@@ -98,16 +98,16 @@ public class Trap : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             switch (type){
             case "Strong":
-                other.gameObject.GetComponent<Enemies>().DooDmg(15);
+                other.gameObject.GetComponent<Enemies>().DooDmg(75);
             break;
             case "Wall":
-                other.gameObject.GetComponent<Enemies>().DooDmg(5);
+                other.gameObject.GetComponent<Enemies>().DooDmg(50);
             break;
             case "Multiple":
-                other.gameObject.GetComponent<Enemies>().DooDmg(5);
+                other.gameObject.GetComponent<Enemies>().DooDmg(50);
             break;
             case "Weakening":
-               other.gameObject.GetComponent<Enemies>().DoPercDmg(10);
+               other.gameObject.GetComponent<Enemies>().DoPercDmg(30);
             break;
             case "Slowness":
                 other.gameObject.GetComponent<Enemies>().SlowDown();
@@ -139,7 +139,7 @@ public class Trap : MonoBehaviour
 
     public void MultipleDamage(GameObject enemy){
         if (enemy.GetComponent<Enemies>().GetDamageBool()){
-            enemy.GetComponent<Enemies>().DooDmg(1);
+            enemy.GetComponent<Enemies>().DooDmg(20);
             Invoke("MultipleDamage",0.5f);
         }
         
