@@ -2666,7 +2666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1672226341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3377,7 +3377,7 @@ MonoBehaviour:
   remainingTimeTillNextWave: 0
   activateWaitForPlayerInput: 0
   targetFrameRate: 60
-  pathParent: {fileID: 766878883}
+  pathParent: {fileID: 1509898134}
 --- !u!4 &1870815866
 Transform:
   m_ObjectHideFlags: 0
