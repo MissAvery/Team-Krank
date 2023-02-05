@@ -178,6 +178,9 @@ MonoBehaviour:
   type: Wall
   col: {fileID: 4115985428032469633}
   mode: 
+  active: {fileID: 1246253800, guid: 1a77aa0cdc351ce49872e7fc64bc8856, type: 3}
+  cooldown: {fileID: 21300000, guid: bc519f86b94d3814d997f6c61aace80d, type: 3}
+  attack: {fileID: -1257128788, guid: 1a77aa0cdc351ce49872e7fc64bc8856, type: 3}
 --- !u!212 &5838120666529329808
 SpriteRenderer:
   m_ObjectHideFlags: 0
