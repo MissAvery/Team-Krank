@@ -68,14 +68,13 @@ MonoBehaviour:
   - 1000
   fallSpeed: 1
   pathCompletedThreshold: 1.004
-  useTeleportOrPath: 1
+  useTeleportOrPath: 0
   buildEnabled: 0
   gameOver: 0
   waveCount: 0
   pathPoints: []
-  teleportPoints: []
   enemiesAlive: []
   remainingTimeTillNextWave: 0
+  waitForPlayerInput: 0
   targetFrameRate: 60
   pathParent: {fileID: 0}
-  teleportParent: {fileID: 0}
