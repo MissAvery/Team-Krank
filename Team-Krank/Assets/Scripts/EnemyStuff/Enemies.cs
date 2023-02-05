@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemies : MonoBehaviour
-{   
-    [SerializeField]
-    private Transform[] pathpoints;
+{
+    // Hier wurden die Paths aus dem Global Balancing übernommen mittels balancing.pathPoints
+    //[SerializeField]
+    //private Transform[] pathPoints;
 
     [SerializeField]
     public float walkSpeed;
 
-    [SerializeField] private float startHealth;
+    /*[SerializeField]*/ private float startHealth;
     public float currentHealth;
     public bool dead = false;
     public GameObject enemy;
@@ -27,7 +29,7 @@ public class Enemies : MonoBehaviour
 
     private int pathpointIndex = 0;
     private void Start (){
-        transform.position = pathpoints[pathpointIndex].transform.position;
+        transform.position = balancing.pathPoints[pathpointIndex].transform.position;
     }
 
     private void Update (){
@@ -36,11 +38,11 @@ public class Enemies : MonoBehaviour
 
     public void walki(){
 
-        if (pathpointIndex <= pathpoints.Length - 1){
+        if (pathpointIndex <= balancing.pathPoints.Count - 1){
 
-             transform.position = Vector2.MoveTowards(transform.position, pathpoints[pathpointIndex].transform.position, walkSpeed * Time.deltaTime);
+             transform.position = Vector2.MoveTowards(transform.position, balancing.pathPoints[pathpointIndex].transform.position, walkSpeed * Time.deltaTime);
 
-            if (transform.position == pathpoints[pathpointIndex].transform.position){
+            if (transform.position == balancing.pathPoints[pathpointIndex].transform.position){
 
                 pathpointIndex += 1;
             }
@@ -48,6 +50,7 @@ public class Enemies : MonoBehaviour
     }
 
     private void Awake(){
+        StartUp();
         currentHealth = startHealth;
     }
 
@@ -103,5 +106,56 @@ public class Enemies : MonoBehaviour
 
     public void SetDamageBool(bool newBool){
         takingDamage = newBool;
+    }
+
+
+    void OnTriggerEnter2D(Collider other) {
+        if (other.CompareTag("Teleporter")) {
+            Teleporter teleporter = other.GetComponent<Teleporter>();
+            if (teleporter.destinationTeleport) {
+                Teleport(teleporter);
+            }
+        }
+    }
+
+
+    void Teleport(Teleporter teleporter) {
+
+    }
+
+
+
+    [SerializeField] bool Kellerassel, Ameise, Marienkäfer, Maus;
+
+    void receiveBalancingValues() {
+
+        if (Kellerassel) {
+            startHealth = balancing.enemyStartHealth[0];
+            walkSpeed = balancing.enemySpeed[0] / 100;
+        }
+        else if (Ameise) {
+            startHealth = balancing.enemyStartHealth[1];
+            walkSpeed = balancing.enemySpeed[1] / 100;
+        }
+        else if (Marienkäfer) {
+            startHealth = balancing.enemyStartHealth[2];
+            walkSpeed = balancing.enemySpeed[2] / 100;
+        }
+        else if (Maus) {
+            startHealth = balancing.enemyStartHealth[3];
+            walkSpeed = balancing.enemySpeed[3] / 100;
+        }
+        else { }
+
+    }
+
+    //
+    GameObject[] GlobalBasicBalancing;
+    BasicBalacing balancing;
+    void StartUp() {
+        GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
+        balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
+        // local variables
+        receiveBalancingValues();
     }
 }
