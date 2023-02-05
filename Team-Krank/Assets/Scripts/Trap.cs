@@ -12,7 +12,7 @@ public class Trap : MonoBehaviour
     private 
     void Start()
     {
-        mode = "InRound";     //temporary
+        mode = "BetweenRounds";     //temporary
 
         if(type == "Strong" || type == "Wall" || type == "Multiple" || type == "Weakening"){
             col.enabled = false;

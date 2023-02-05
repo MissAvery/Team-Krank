@@ -638,13 +638,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Spikes:
 
-
     Dmg: Low
 
     Type: Permanent
 
     Affects: Ground
-
 
     Plain
     old spikes'
@@ -753,7 +751,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 1.6, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4043483164622554294
 CanvasRenderer:
@@ -887,7 +885,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 1.6, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5470758215606932922
 Canvas:
@@ -908,7 +906,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &6485919061212238368
 MonoBehaviour:
@@ -3037,7 +3035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3610103343918073061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3047,7 +3045,7 @@ RectTransform:
   m_GameObject: {fileID: 7628375350035001739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8350966265455822417}
@@ -3096,7 +3094,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8696729629173388954
 MonoBehaviour:

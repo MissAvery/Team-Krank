@@ -37,6 +37,7 @@ public class TrapPoint : MonoBehaviour
     }
 
    public void Clicked(){
+
     if(mode == "BetweenRounds"){
         if(!used && !openUI && !locked){
             foreach (GameObject i in list.points){
@@ -57,10 +58,10 @@ public class TrapPoint : MonoBehaviour
     public void BuildTrap(string trapType){
         switch (trapType){
             case "Strong":
-                trap = Instantiate(StrongRoot, transform.position, Quaternion.identity);
+                trap = Instantiate(StrongRoot, transform.position + new Vector3(0,-0.15f,0), Quaternion.identity);
             break;
             case "Wall":
-                trap = Instantiate(WallRoot, transform.position, Quaternion.identity);
+                trap = Instantiate(WallRoot, transform.position + new Vector3(0,0.6f,0), Quaternion.identity);
             break;
             case "Multiple":
                 trap = Instantiate(MultipleRoots, transform.position, Quaternion.identity);
@@ -72,10 +73,10 @@ public class TrapPoint : MonoBehaviour
                 trap = Instantiate(Trapdoor, transform.position, Quaternion.identity);
             break;
             case "Spikes":
-                trap = Instantiate(Spikes, transform.position, Quaternion.identity);
+                trap = Instantiate(Spikes, transform.position + new Vector3(0,-0.6f,0), Quaternion.identity);
             break;
             case "Slowness":
-                trap = Instantiate(SlownessField, transform.position, Quaternion.identity);
+                trap = Instantiate(SlownessField, transform.position + new Vector3(0,-0.13f,0), Quaternion.identity);
             break;
             }
             trap.GetComponent<Trap>().SetTrapPoint(gameObject);
@@ -89,6 +90,7 @@ public class TrapPoint : MonoBehaviour
         used = false;
         button.enabled = true;
         openUI = false;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void CloseUI(){
