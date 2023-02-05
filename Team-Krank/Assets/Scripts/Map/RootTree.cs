@@ -22,10 +22,10 @@ public class RootTree : MonoBehaviour
 
             // Placeholder
             Debug.Log("GAME OVER");
-            this.gameObject.SetActive(false);
-            
+            //this.gameObject.SetActive(false);
+            //Time.timeScale = 0.1f;
 
-            
+
         }
     }
 
