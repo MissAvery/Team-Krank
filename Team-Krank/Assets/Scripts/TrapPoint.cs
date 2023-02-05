@@ -54,7 +54,7 @@ public class TrapPoint : MonoBehaviour
    public void Setmode(string newMode){
         mode = newMode;
         if (trap != null){
-            trap.GetComponent<Trap>().Setmode("newMode");
+            trap.GetComponent<Trap>().Setmode(newMode);
         }
     }
 
