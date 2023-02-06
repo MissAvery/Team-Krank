@@ -63,8 +63,8 @@ MonoBehaviour:
   - 100
   enemySpeed:
   - 200
-  - 140
-  - 200
+  - 280
+  - 180
   - 140
   useTeleportOrPath: 0
   buildEnabled: 0

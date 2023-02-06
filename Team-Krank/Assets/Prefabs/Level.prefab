@@ -441,6 +441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7218113148403083864}
     m_Modifications:
+    - target: {fileID: 5900677222347818937, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.28
+      objectReference: {fileID: 0}
     - target: {fileID: 5900677222347818943, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
       propertyPath: destinationTeleport
       value: 
@@ -507,6 +511,11 @@ PrefabInstance:
       objectReference: {fileID: 7218113147109908103}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
+--- !u!1 &7218113148098152498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7388059871725696929, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
+  m_PrefabInstance: {fileID: 192611233448378259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7218113148098152499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7388059871725696928, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
@@ -523,6 +532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Balancing Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1144152845335231821, guid: d81d39cd145b984499576dcdfa9b2c93, type: 3}
+      propertyPath: pathParent
+      value: 
+      objectReference: {fileID: 7218113148098152498}
     - target: {fileID: 1144152845335231822, guid: d81d39cd145b984499576dcdfa9b2c93, type: 3}
       propertyPath: m_RootOrder
       value: 0
