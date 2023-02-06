@@ -15,7 +15,6 @@ public class ReplaceSprite : MonoBehaviour
     private void FixedUpdate() {
         if (balancing.gameOver) {
             spriteRenderer.sprite = destroyedHeart;
-            Time.timeScale = 0.1f;
         }
     }
 

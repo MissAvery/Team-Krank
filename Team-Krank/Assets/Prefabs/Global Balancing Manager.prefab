@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootHealthPoints: 20
-  spawnInbetweenTime: 0.4
-  roundCooldown: 5
+  spawnInbetweenTime: 0.8
+  roundCooldown: 10
   maxSpawnCount: 040000000600000008000000060000000c0000000c0000000e000000100000000c000000
   enableRandomAmount: 1
   minSpawnCount: 020000000300000004000000050000000400000006000000080000000800000007000000
@@ -76,4 +76,4 @@ MonoBehaviour:
   remainingTimeTillNextWave: 0
   activateWaitForPlayerInput: 0
   targetFrameRate: 60
-  pathParent: {fileID: 0}
+  pathParent: {fileID: 7388059871725696929, guid: 87d2c183e29a5d046b99df1379044194, type: 3}
