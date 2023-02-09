@@ -16,6 +16,7 @@ public class Enemies : MonoBehaviour
     public float currentHealth;
     public bool dead = false;
     public GameObject enemy;
+    [SerializeField] HealthBar healthBar;
 
 
     public float damage;
@@ -95,7 +96,9 @@ public class Enemies : MonoBehaviour
     }
 
     public void damageTaken(float _damage){
-        
+        healthBar.SetHealth(currentHealth);
+
+
         if (currentHealth > 0){
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startHealth);
             /*player aua :( */
@@ -137,11 +140,13 @@ public class Enemies : MonoBehaviour
     }*/
     public void DooDmg(int dmg){
         damageTaken(dmg);
+        healthBar.SetHealth(currentHealth);
     }
 
     public void DoPercDmg(int perc){
         prctdmg = (currentHealth / 100) * perc;
         damageTaken(prctdmg);
+        healthBar.SetHealth(currentHealth);
     }
 
     public void SlowDown(){
@@ -158,11 +163,14 @@ public class Enemies : MonoBehaviour
     }
 
     public bool GetDamageBool(){
+        healthBar.SetHealth(currentHealth);
         return takingDamage;
+
     }
 
     public void SetDamageBool(bool newBool){
         takingDamage = newBool;
+        healthBar.SetHealth(currentHealth);
     }
 
 
@@ -220,5 +228,6 @@ public class Enemies : MonoBehaviour
         balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
         // local variables
         ReceiveBalancingValues();
+        healthBar.SetMaxHealth(startHealth);
     }
 }

@@ -210,6 +210,9 @@ MonoBehaviour:
   type: Spikes
   col: {fileID: 8755517271369736074}
   mode: 
+  active: {fileID: 0}
+  cooldown: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!212 &3674109386765537121
 SpriteRenderer:
   m_ObjectHideFlags: 0
