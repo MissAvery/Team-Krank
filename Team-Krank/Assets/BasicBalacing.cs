@@ -52,6 +52,8 @@ public class BasicBalacing : MonoBehaviour {
     private void Awake() {
         Application.targetFrameRate = targetFrameRate;
         AddPathPoints();
+
+
     }
 
     //private void Update() {
@@ -63,5 +65,13 @@ public class BasicBalacing : MonoBehaviour {
     //    }
     //    else { Timer.SetActive(false); }
     //}
+
+    private void Start() {
+        FindObjectOfType<AudioManager>().Play("MusicLoop");
+    }
+
+    private void Update() {
+        
+    }
 
 }

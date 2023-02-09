@@ -329,3 +329,15 @@ MonoBehaviour:
     pitch: 1
     type: Sound
     source: {fileID: 0}
+  - name: MusicLoop
+    clip: {fileID: 8300000, guid: 320021565c873c740bfe77a23fd75cd2, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Music
+    source: {fileID: 0}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: 57e04ee7a74216b4e99e57ac66857541, type: 3}
+    volume: 0.5
+    pitch: 1
+    type: Music
+    source: {fileID: 0}
