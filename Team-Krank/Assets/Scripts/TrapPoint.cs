@@ -37,7 +37,7 @@ public class TrapPoint : MonoBehaviour
     }
 
    public void Clicked(){
-    print("click");
+
     if(mode == "BetweenRounds"){
         if(!used && !openUI && !locked){
             foreach (GameObject i in list.points){
@@ -46,24 +46,25 @@ public class TrapPoint : MonoBehaviour
             trapUI.enabled = true;
             openUI = true;
             button.enabled = false;
-
-            //Temporary
-            FindObjectOfType<AudioManager>().Play("TestSound");
+            FindObjectOfType<AudioManager>().Play("FallenMenu");
         }
     }
    }
 
    public void Setmode(string newMode){
         mode = newMode;
+        if (trap != null){
+            trap.GetComponent<Trap>().Setmode(newMode);
+        }
     }
 
     public void BuildTrap(string trapType){
         switch (trapType){
             case "Strong":
-                trap = Instantiate(StrongRoot, transform.position, Quaternion.identity);
+                trap = Instantiate(StrongRoot, transform.position + new Vector3(0,-0.15f,0), Quaternion.identity);
             break;
             case "Wall":
-                trap = Instantiate(WallRoot, transform.position, Quaternion.identity);
+                trap = Instantiate(WallRoot, transform.position + new Vector3(0,0.6f,0), Quaternion.identity);
             break;
             case "Multiple":
                 trap = Instantiate(MultipleRoots, transform.position, Quaternion.identity);
@@ -75,22 +76,31 @@ public class TrapPoint : MonoBehaviour
                 trap = Instantiate(Trapdoor, transform.position, Quaternion.identity);
             break;
             case "Spikes":
-                trap = Instantiate(Spikes, transform.position, Quaternion.identity);
+                trap = Instantiate(Spikes, transform.position + new Vector3(0,-0.6f,0), Quaternion.identity);
             break;
             case "Slowness":
-                trap = Instantiate(SlownessField, transform.position, Quaternion.identity);
+                trap = Instantiate(SlownessField, transform.position + new Vector3(0,-0.1f,0), Quaternion.identity);
             break;
             }
+            int rand = Random.Range(1,3);
+            if (rand == 1){
+                FindObjectOfType<AudioManager>().Play("FallePlatzieren1");
+            } else {
+                FindObjectOfType<AudioManager>().Play("FallePlatzieren2");
+            }
+
             trap.GetComponent<Trap>().SetTrapPoint(gameObject);
             trapUI.enabled = false;
             used = true;
             openUI = false;
+            GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void SetUsedFalse(){
         used = false;
         button.enabled = true;
         openUI = false;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void CloseUI(){

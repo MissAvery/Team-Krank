@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] GameObject destinationTeleport;
+    public GameObject destinationTeleport;
 
-    private void OnTriggerEnter(Collider other) {
-            //Debug.Log("collision: " + other);
+    //private void OnTriggerEnter(Collider other) {
+    //        //Debug.Log("collision: " + other);
 
-            MovementPlaceholder enemy = other.gameObject.GetComponent<MovementPlaceholder>();
-            if (enemy) {
+    //        MovementPlaceholder enemy = other.gameObject.GetComponent<MovementPlaceholder>();
+    //        if (enemy) {
 
-                other.transform.position = destinationTeleport.transform.position;
+    //            other.transform.position = destinationTeleport.transform.position;
  
 
-                if (!enemy.movementSwitched) {
-                enemy.movementSwitched = true;
-                //enemy.mirrorSprite(true);
-            }
+    //            if (!enemy.movementSwitched) {
+    //            enemy.movementSwitched = true;
+    //            //enemy.mirrorSprite(true);
+    //        }
 
-                else {
-                enemy.movementSwitched = false;
-                //enemy.mirrorSprite(false);
-            }
+    //            else {
+    //            enemy.movementSwitched = false;
+    //            //enemy.mirrorSprite(false);
+    //        }
 
 
-            }
-    }
+    //        }
+    //}
+
 }

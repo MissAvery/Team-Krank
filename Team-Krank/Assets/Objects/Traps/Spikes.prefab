@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 8755517271369736074}
   - component: {fileID: 1460156606730361930}
   - component: {fileID: 3674109386765537121}
+  - component: {fileID: 7784381515653925126}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -181,7 +182,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -192,7 +193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.5}
+  m_Size: {x: 1.3, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &1460156606730361930
 MonoBehaviour:
@@ -209,6 +210,9 @@ MonoBehaviour:
   type: Spikes
   col: {fileID: 8755517271369736074}
   mode: 
+  active: {fileID: 0}
+  cooldown: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!212 &3674109386765537121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -261,6 +265,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7784381515653925126
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157718893932339777}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7181089766108856040
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitSpawn : MonoBehaviour {
     GameObject[] GlobalBasicBalancing;
-    BasicBalacing balancing;
+    BasicBalacing bal;
     float localSpawntime;
     float localCooldown;
     int localMaxSpawnCount;
@@ -14,40 +14,34 @@ public class UnitSpawn : MonoBehaviour {
     int count = 1;
 
 
-
-
     void SpawnUnit() {
         Vector2 spawnPosition = this.transform.position;
         Quaternion spawnRotation = this.transform.rotation;
-        GameObject currentEnemy = Instantiate(balancing.enemyTypes[balancing.enemyWaveType[balancing.waveCount]], spawnPosition, spawnRotation);
-        balancing.enemiesAlive.Add(currentEnemy);
+        GameObject currentEnemy = Instantiate(bal.enemyTypes[bal.enemyWaveType[bal.waveCount]], spawnPosition, spawnRotation);
+        bal.enemiesAlive.Add(currentEnemy);
         currentEnemy = null;
     }
-
 
 
     private void Awake() {
         StartUp();
         StartCoroutine(SpawnInterval());
-
     }
     bool runOnce = false;
     int rnd;
     IEnumerator SpawnInterval() {
         while (true) {
             // OHNE RANDOM!
-            if (!balancing.enableRandomAmount) {
-                if (count <= /*localMaxSpawnCount*/ balancing.maxSpawnCount[balancing.waveCount]) {
+            if (!bal.enableRandomAmount) {
+                if (count <= bal.maxSpawnCount[bal.waveCount]) {
                     SpawnUnit();
                     count++;
                     yield return new WaitForSeconds(localSpawntime);
                 }
-                else if (balancing.enemiesAlive.Count <= 0 && count >= /*localMaxSpawnCount*/ balancing.maxSpawnCount[balancing.waveCount]) {
+                else if (bal.enemiesAlive.Count <= 0 && count >= bal.maxSpawnCount[bal.waveCount]) {
                     count = 1;
                     yield return new WaitForSeconds(localCooldown);
-                    balancing.waveCount = balancing.waveCount + 1;
-                    balancing.buildEnabled = false;
-
+                    EnableTraps();
 
                 }
                 else {
@@ -55,10 +49,10 @@ public class UnitSpawn : MonoBehaviour {
                 }
             }
             // MIT RANDOM!
-            else if (balancing.enableRandomAmount) {
+            else if (bal.enableRandomAmount) {
 
                 if (!runOnce) {
-                    rnd = Random.Range(balancing.minSpawnCount[balancing.waveCount], balancing.maxSpawnCount[balancing.waveCount]);
+                    rnd = Random.Range(bal.minSpawnCount[bal.waveCount], bal.maxSpawnCount[bal.waveCount]);
                     runOnce = true;
                 }
 
@@ -67,12 +61,12 @@ public class UnitSpawn : MonoBehaviour {
                     count++;
                     yield return new WaitForSeconds(localSpawntime);
                 }
-                else if (balancing.enemiesAlive.Count <= 0 && count >= rnd) {
+                else if (bal.enemiesAlive.Count <= 0 && count >= rnd) {
                     count = 1;
                     yield return new WaitForSeconds(localCooldown);
-                    balancing.waveCount = balancing.waveCount + 1;
-                    balancing.buildEnabled = false;
                     runOnce = false;
+                    EnableTraps();
+
                 }
                 else {
                     yield return new WaitForSeconds(localSpawntime);
@@ -82,53 +76,65 @@ public class UnitSpawn : MonoBehaviour {
         }
     }
 
+    void EnableTraps() {
+        bal.waveCount = bal.waveCount + 1;
+        bal.buildEnabled = false;
+
+        foreach (GameObject trapP in GameObject.Find("TrapPointList").GetComponent<PointList>().points) {       //Enables Traps
+            trapP.GetComponent<TrapPoint>().Setmode("InRound");
+        }
+    }
 
     void checkIfWaveCleared() {
-        if (balancing.enemiesAlive.Count <= 0) {
-            balancing.buildEnabled = true;
+        if (bal.enemiesAlive.Count <= 0) {
+            bal.buildEnabled = true;
+
+            foreach (GameObject trapP in GameObject.Find("TrapPointList").GetComponent<PointList>().points){            //Enables Trap-placement
+                trapP.GetComponent<TrapPoint>().Setmode("BetweenRounds");
+            }
+
         }
         //check Ob Gegner dod
         else {
-            for (int i = 0; i < balancing.enemiesAlive.Count; i++) {
-                if (balancing.enemiesAlive[i] == null) balancing.enemiesAlive.Remove(balancing.enemiesAlive[i]);
+            for (int i = 0; i < bal.enemiesAlive.Count; i++) {
+                if (bal.enemiesAlive[i] == null) bal.enemiesAlive.Remove(bal.enemiesAlive[i]);
             }
         }
     }
 
     void Timer() {
-        if (balancing.buildEnabled) {
+        if (bal.buildEnabled) {
 
-            balancing.remainingTimeTillNextWave -= Time.deltaTime;
+            bal.remainingTimeTillNextWave -= Time.deltaTime;
 
             //Debug.Log(timeRemaining);
         }
-        else balancing.remainingTimeTillNextWave = balancing.roundCooldown;
+        else bal.remainingTimeTillNextWave = bal.roundCooldown;
     }
 
     private void Update() {
         Timer();
+
+        if (bal.waveCount <= 4) {
+            bal.win = true;
+            StopCoroutine(SpawnInterval());
+            //Time.timeScale = 0.01f;
+        }
     }
     private void FixedUpdate() {
         checkIfWaveCleared();
     }
 
 
-
-
-
-
-
-
-
-
     void StartUp() {
         GlobalBasicBalancing = GameObject.FindGameObjectsWithTag("GlobalBalancing");
-        balancing = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
+        bal = GlobalBasicBalancing[0].GetComponent<BasicBalacing>();
 
-        localSpawntime = balancing.spawnInbetweenTime;
-        localCooldown = balancing.roundCooldown;
-        balancing.remainingTimeTillNextWave = balancing.roundCooldown;
-        localMaxSpawnCount = balancing.maxSpawnCount[balancing.waveCount];
+        localSpawntime = bal.spawnInbetweenTime;
+        localCooldown = bal.roundCooldown;
+        bal.remainingTimeTillNextWave = bal.roundCooldown;
+        localMaxSpawnCount = bal.maxSpawnCount[bal.waveCount];
+
     }
 
 }
